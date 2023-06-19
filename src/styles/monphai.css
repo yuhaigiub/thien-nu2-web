@@ -1,0 +1,171 @@
+#container2 {
+	background-image: url("../assets/monphai/monphai_bg.jpg");
+	height: 1317px;
+}
+
+#container2 > .title {
+	background-image: url("../assets/monphai/monphai_title.png");
+	width: 941px;
+	height: 132px;
+	margin-top: 300px;
+}
+
+#characterBg {
+	width: 1920px;
+	height: 645px;
+	background-image: url("../assets/monphai/monphai_character_bg.jpg");
+	background-size: 100% 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+#textBox {
+	width: 429px;
+	height: 646px;
+	background-image: url("../assets/monphai/monphai_info_bg.png");
+	background-size: 100%;
+	position: relative;
+	margin-left: 6rem;
+	z-index: 3;
+}
+
+#textBox > #playVideoButtonFrame2 {
+	background-image: url("../assets/monphai/monphai_play_button.png");
+	width: 102px;
+	height: 109px;
+	background-size: 100%;
+	position: absolute;
+	right: 25%;
+	top: 20%;
+	z-index: 4;
+}
+
+#text {
+	width: 70%;
+	height: 128px;
+	position: absolute;
+	bottom: 110px;
+	left: 40px;
+	color: white;
+	padding-inline: 10px;
+}
+
+#text h2 {
+	margin: 0 0 10px;
+}
+
+#text p {
+	text-align: justify;
+}
+
+#detailButton {
+	background-image: url("../assets/monphai/monphai_detail_button_bg.png");
+	height: 53px;
+	aspect-ratio: 261/53;
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	bottom: 16px;
+	left: 15%;
+}
+
+#swapCharacterButton {
+	background-size: 100% 100%;
+	width: 257px;
+	height: 199px;
+	background-color: transparent;
+	border: none;
+	position: absolute;
+	right: 16px;
+	top: 180px;
+	z-index: 3;
+}
+
+#swapCharacterButton[gender="male"] {
+	background-image: url("../assets/monphai/monphai_button_hover_male.png");
+}
+
+#swapCharacterButton[gender="female"] {
+	background-image: url("../assets/monphai/monphai_button_hover_female.png");
+}
+
+#characterDisplay {
+	width: 937px;
+	aspect-ratio: 937/832;
+	z-index: 1;
+	background-color: transparent;
+	background-size: 100% 100%;
+	position: absolute;
+	bottom: -16px;
+	left: 180px;
+}
+
+#characterDisplay[gender="male"] {
+	background-image: url("../assets/monphai/monphai_male_character.png");
+}
+
+#characterDisplay[gender="female"] {
+	background-image: url("../assets/monphai/monphai_female_character.png");
+}
+
+#decor {
+	width: 171px;
+	height: 645px;
+	background-image: url("../assets/monphai/monphai_button_decor.png");
+	position: absolute;
+	right: 135px;
+}
+
+@media screen and (max-width: 768px) {
+	#container2 {
+		width: 768px;
+		height: 1601px;
+		background-image: url("../assets/monphai/monphai_bg_mobile.jpg");
+	}
+
+	#container2 > .title {
+		width: 768px;
+		height: 119px;
+		margin-top: 300px;
+	}
+
+	#characterBg {
+		width: 768px;
+		height: 696px;
+	}
+
+	#textBox {
+		margin-left: -30px;
+	}
+
+	#characterDisplay {
+		width: auto;
+		height: 880px;
+		left: unset;
+		right: -210px;
+	}
+
+	#swapCharacterButton {
+		right: 16px;
+		top: unset;
+		bottom: 0;
+	}
+
+	#decor {
+		display: none !important;
+	}
+
+	#detailButton {
+		height: 65px;
+		font-size: 30px;
+		left: 8%;
+		bottom: -15px;
+	}
+}
