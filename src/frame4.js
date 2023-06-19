@@ -1,9 +1,7 @@
-import Swiper, { Pagination } from "swiper";
+import Swiper from "swiper";
 // import "swiper/css/bundle";
 
 import { nangcapAssets } from "./import_assets";
-
-Swiper.use([Pagination]);
 const options = nangcapAssets.options;
 const texts = nangcapAssets.texts;
 
@@ -46,6 +44,8 @@ export default function runFrame4() {
 		grabCursor: true,
 		pagination: {
 			el: ".swiper-pagination",
+			type: "bullets",
+			clickable: true,
 		},
 	});
 }

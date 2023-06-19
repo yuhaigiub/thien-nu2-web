@@ -13,6 +13,10 @@ import runFrame3 from "./frame3";
 import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
 
+import Swiper, { Pagination } from "swiper";
+
+Swiper.use([Pagination]);
+
 // UNIVERSAL CONSTANT (never change or must be taken from other sources)
 export let maxUser = 15000;
 // ------------------------------------------------------------------------

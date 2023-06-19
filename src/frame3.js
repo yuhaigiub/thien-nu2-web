@@ -1,6 +1,5 @@
 import { kynangAssets } from "./import_assets";
-
-
+import Swiper from "swiper";
 
 const books = kynangAssets.books;
 const ingames = kynangAssets.ingames;
@@ -47,21 +46,15 @@ export default function runFrame3() {
 
 	// skillIcon
 	const skillIcon = document.getElementById("skillIcon");
-	const skillIconMobile = document.getElementById("skillIconMobile");
 	skillIcon.src = info[skillId].icon;
-	skillIconMobile.src = info[skillId].icon;
 
 	// skillName
 	const skillName = document.getElementById("skillName");
-	const skillNameMobile = document.getElementById("skillNameMobile");
 	skillName.innerText = info[skillId].skillName;
-	skillNameMobile.innerText = info[skillId].skillName;
 
 	// skillDescription
 	const skillDescription = document.getElementById("skillDescription");
-	const skillDescriptionMobile = document.getElementById("skillDescriptionMobile");
 	skillDescription.innerText = info[skillId].description;
-	skillDescriptionMobile.innerText = info[skillId].description;
 
 	// skillText
 	const skillText = document.getElementById("skillText");
@@ -106,9 +99,17 @@ export default function runFrame3() {
 		const buttonImg = new Image();
 		buttonImg.src = item.mobileIcon;
 		button.appendChild(buttonImg);
-		button.onclick = () => {
-			onClick(index, true);
-		};
+		// button.onclick = () => {
+		// 	onClick(index, true);
+		// };
 		mobileIconContainer.appendChild(button);
+	});
+
+	const skillSwiper = new Swiper(".skill-swiper", {
+		slidesPerView: 1,
+		direction: "horizontal",
+		loop: false,
+		centeredSlides: true,
+		grabCursor: true,
 	});
 }

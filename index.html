@@ -183,6 +183,8 @@
 			</div>
 			<div id="container3" class="containerType">
 				<div class="title"></div>
+
+				<!-- pc -->
 				<div id="skillContainer">
 					<button id="prevButton"></button>
 					<div id="skillBg">
@@ -195,13 +197,6 @@
 						<div id="book"></div>
 						<div id="skill"></div>
 					</div>
-					<div id="descriptionContainerMobile">
-						<img id="skillIconMobile" />
-						<div>
-							<div id="skillNameMobile"></div>
-							<div id="skillDescriptionMobile"></div>
-						</div>
-					</div>
 					<button id="nextButton"></button>
 				</div>
 				<div id="descriptionContainer">
@@ -209,6 +204,96 @@
 					<div>
 						<div id="skillName"></div>
 						<div id="skillDescription"></div>
+					</div>
+				</div>
+
+				<!-- mobile -->
+				<div id="skillContainerMobile">
+					<div id="skillBgMobile" class="skill-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="skillBgMobile">
+									<div class="playVideoMobile">
+										<div class="skillTextMobile">Họa hồn</div>
+										<button class="playVideoButtonFrame3Mobile"></button>
+									</div>
+									<img class="skillMobile" src="./images/hoa_hon_ingame_mobile.jpg" />
+									<div class="descriptionContainerMobile">
+										<img class="skillIconMobile" src="./images/hoa_hon.png" />
+										<div>
+											<div class="skillNameMobile">Họa Thủy Lâu Băng</div>
+											<div class="skillDescriptionMobile">
+												Gây cho nhiều kẻ địch xung quanh sát thương thủy; Gây sát thương băng cho nhiều kể địch xung quanh Phân Thân. Khi Họa Thủy Lâu
+												Băng gây sát thương thủy và băng sẽ giảm Kháng Thủy và Kháng Băng kẻ địch, khi gây sát thương băng cho kẻ địch, nếu dinh lực
+												mục tiêu thấp hơn 30% sẽ có xác suất khiến mục tiêu bị đóng băng. Kỹ năng là đoạn 2 của Lâm Kính Tự Tả.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="skillBgMobile">
+									<div class="playVideoMobile">
+										<div class="skillTextMobile">Mị giả</div>
+										<button class="playVideoButtonFrame3Mobile"></button>
+									</div>
+									<img class="skillMobile" src="./images/mi_gia_ingame_mobile.jpg" />
+									<div class="descriptionContainerMobile">
+										<img class="skillIconMobile" src="./images/mi_gia.png" />
+										<div>
+											<div class="skillNameMobile">Tương Kiến Hoan</div>
+											<div class="skillDescriptionMobile">
+												Giúp bản thân tạm thời tăng Kháng Hỗn Loạn và Tăng Hỗn Loạn. Kỹ năng là đoạn 2 của Hỗn La Y.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="swiper-slide">
+								<div class="playVideoMobile">
+									<div class="skillTextMobile"></div>
+									<button class="playVideoButtonFrame3Mobile"></button>
+								</div>
+								<img class="skillMobile" src="./images/xa_thu_ingame_mobile.jpg" />
+								<div class="descriptionContainerMobile">
+									<img class="skillIconMobile" />
+									<div>
+										<div class="skillNameMobile"></div>
+										<div class="skillDescriptionMobile"></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="playVideoMobile">
+									<div class="skillTextMobile"></div>
+									<button class="playVideoButtonFrame3Mobile"></button>
+								</div>
+								<img class="skillMobile" src="./images/y_su_ingame_mobile.jpg" />
+								<div class="descriptionContainerMobile">
+									<img class="skillIconMobile" />
+									<div>
+										<div class="skillNameMobile"></div>
+										<div class="skillDescriptionMobile"></div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div id="playVideoMobile">
+									<div id="skillTextMobile"></div>
+									<button id="playVideoButtonFrame3Mobile"></button>
+								</div>
+								<img id="skillMobile" src="./images/yen_su_ingame_mobile.jpg" />
+								<div class="descriptionContainerMobile">
+									<img class="skillIconMobile" />
+									<div>
+										<div class="skillNameMobile"></div>
+										<div class="skillDescriptionMobile"></div>
+									</div>
+								</div>
+							</div> -->
+						</div>
+						<!-- <button id="prevButtonMobile"></button> -->
+						<!-- <button id="nextButtonMobile"></button> -->
 					</div>
 				</div>
 				<div id="mobileIconContainer"></div>
@@ -232,23 +317,33 @@
 					<div class="swiper-wrapper">
 						<div class="optionImgMobile swiper-slide">
 							<img src="./images/nangcap_nang_cap_suc_manh_mobile.jpg" />
-							<img class="optionTextMobile" src="./images/nangcap_nang_cap_suc_manh_text.png" />
+							<div>
+								<img class="optionTextMobile" src="./images/nangcap_nang_cap_suc_manh_text.png" />
+							</div>
 						</div>
 						<div class="optionImgMobile swiper-slide">
 							<img src="./images/nangcap_nang_cap_cua_hang_mobile.jpg" />
-							<img class="optionTextMobile" src="./images/nangcap_nang_cap_cua_hang_text.png" />
+							<div>
+								<img class="optionTextMobile" src="./images/nangcap_nang_cap_cua_hang_text.png" />
+							</div>
 						</div>
 						<div class="optionImgMobile swiper-slide">
 							<img src="./images/nangcap_gia_vien_ky_ao_mobile.jpg" />
-							<img class="optionTextMobile" src="./images/nangcap_gia_vien_ky_ao_text.png" />
+							<div>
+								<img class="optionTextMobile" src="./images/nangcap_gia_vien_ky_ao_text.png" />
+							</div>
 						</div>
 						<div class="optionImgMobile swiper-slide">
 							<img src="./images/nangcap_thay_doi_dien_mao_mobile.jpg" />
-							<img class="optionTextMobile" src="./images/nangcap_thay_doi_dien_mao_text.png" />
+							<div>
+								<img class="optionTextMobile" src="./images/nangcap_thay_doi_dien_mao_text.png" />
+							</div>
 						</div>
 						<div class="optionImgMobile swiper-slide">
 							<img src="./images/nangcap_nang_cap_tien_ich_mobile.jpg" />
-							<img class="optionTextMobile" src="./images/nangcap_nang_cap_tien_ich_text.png" />
+							<div>
+								<img class="optionTextMobile" src="./images/nangcap_nang_cap_tien_ich_text.png" />
+							</div>
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>

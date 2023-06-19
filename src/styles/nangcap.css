@@ -130,20 +130,49 @@
 }
 
 #frame4Mobile .swiper-pagination {
-	background-color: red;
-	height: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-image: url("../assets/nangcap/nangcap_pagination_bg.png");
+	background-repeat: repeat-x;
+	gap: 30px;
+	height: 31px;
+	width: 390px !important;
+	background-position: center;
+	position: absolute !important;
+	left: 50%;
+	transform: translate(-50%);
 }
 
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+	background-image: url("../assets/nangcap/nangcap_pagination_button.png");
+	background-size: 100% 100%;
+	width: 31px !important;
+	height: 31px !important;
+	background-color: transparent;
+	opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+	transform: scale(1.5);
+}
+
+.optionImgMobile > div {
+	width: 300px;
+	aspect-ratio: 135/262;
+	background-color: rgba(0, 0, 0, 0.479);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 .optionTextMobile {
 	display: block;
 	width: 215px;
 	aspect-ratio: 135/262;
 	position: absolute;
-	top: 30px;
-	right: 30px;
+	bottom: 50px;
+	left: 15px;
 }
 
 @media screen and (max-width: 768px) {
