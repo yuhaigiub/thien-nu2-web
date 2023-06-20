@@ -89,6 +89,7 @@
 	right: 16px;
 	top: 180px;
 	z-index: 3;
+	display: flex;
 }
 
 #swapCharacterButton[gender="male"] {
@@ -97,6 +98,11 @@
 
 #swapCharacterButton[gender="female"] {
 	background-image: url("../assets/monphai/monphai_button_hover_female.png");
+}
+
+#swapCharacterButton :is(#maleCharacter, #femaleCharacter) {
+	width: 50%;
+	height: 100%;
 }
 
 #characterDisplay {

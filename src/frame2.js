@@ -14,19 +14,38 @@ export default function runFrame2() {
 	const textBox = document.querySelector("#textBox #text");
 	textBox.innerHTML = isMale ? maleHTML : femaleHTML;
 
-	// swap character button
-	const swapCharacterButton = document.getElementById("swapCharacterButton");
-	swapCharacterButton.setAttribute("gender", isMale ? "male" : "female");
-	swapCharacterButton.addEventListener("click", () => {
-		isMale = !isMale;
-		swapCharacterButton.setAttribute("gender", isMale ? "male" : "female");
-		characterDisplay.setAttribute("gender", isMale ? "male" : "female");
-		textBox.innerHTML = isMale ? maleHTML : femaleHTML;
-	});
-
 	const playVideoButton = document.getElementById("playVideoButtonFrame2");
 	playVideoButton.onclick = () => {
 		togglePopup(true, "video");
 		setVideo(isMale ? "male" : "female");
+	};
+
+	// swap character button
+	const swapCharacterButton = document.getElementById("swapCharacterButton");
+	swapCharacterButton.setAttribute("gender", isMale ? "male" : "female");
+
+	const maleButton = document.querySelector("#swapCharacterButton #maleCharacter");
+	const femaleButton = document.querySelector("#swapCharacterButton #femaleCharacter");
+	maleButton.onmouseenter = () => {
+		swapCharacterButton.setAttribute("gender", "male");
+	};
+	maleButton.onmouseleave = () => {
+		characterDisplay.setAttribute("gender", isMale ? "male" : "female");
+	};
+	maleButton.onclick = () => {
+		isMale = true;
+		swapCharacterButton.setAttribute("gender", "male");
+		characterDisplay.setAttribute("gender", "male");
+	};
+	femaleButton.onmouseenter = () => {
+		swapCharacterButton.setAttribute("gender", "female");
+	};
+	femaleButton.onmouseleave = () => {
+		characterDisplay.setAttribute("gender", isMale ? "male" : "female");
+	};
+	femaleButton.onclick = () => {
+		isMale = false;
+		swapCharacterButton.setAttribute("gender", "female");
+		characterDisplay.setAttribute("gender", "female");
 	};
 }
