@@ -52,10 +52,12 @@
 
 #text h2 {
 	margin: 0 0 10px;
+	font-size: 19px;
 }
 
 #text p {
 	text-align: justify;
+	font-size: 19px;
 }
 
 #detailButton {

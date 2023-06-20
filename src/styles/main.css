@@ -108,17 +108,21 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 24px;
+	font-size: 36px;
+}
+#announcement > div {
+	display: flex;
+	align-items: flex-end;
 }
 
-#announcement > span {
+#announcement span {
 	color: red;
-	font-size: 36px;
+	font-size: 46px;
 	font-weight: bold;
 }
 
 #progressContainer > p {
-	font-size: 24px;
+	font-size: 20px;
 	margin-block: 12px;
 }
 
@@ -145,20 +149,33 @@
 }
 
 #progressLine > #innerProgressLine {
-	background-color: #a54b4f;
+	background-image: url("../assets/main/main_inner_progress_line_bg.png");
+	background-size: 100% 100%;
 	height: 100%;
+	border-radius: 8px;
+	position: relative;
+}
+
+#progressLine > #innerProgressLine::after {
+	content: "";
+	background-image: url("../assets/main/main_butterly_decor.png");
+	width: 54px;
+	height: 43px;
+	position: absolute;
+	top: -50px;
+	right: -20px;
 }
 
 .progressItemContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-size: 24px;
+	font-size: 22px;
 }
 
 .progressItemContainer > .number {
-	color: red;
-	font-size: 24px;
+	color: rgb(161 72 76);
+	font-size: 22px;
 	font-weight: bold;
 	margin-top: 2px;
 }
@@ -250,7 +267,7 @@
 	aspect-ratio: 271/85;
 	background-image: url("../assets/main/main_hen_uoc_button_mobile.png");
 	background-size: 100% 100%;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 #headerMobile {
@@ -379,6 +396,10 @@
 	#announcement {
 		height: 89px;
 		margin-top: 150px;
+	}
+
+	#announcement span {
+		font-size: 48px;
 	}
 
 	#progressContainer > p {

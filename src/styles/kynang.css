@@ -12,7 +12,6 @@
 }
 
 #skillContainer {
-	outline: 1px solid red;
 	margin-inline: auto;
 	display: flex;
 	align-items: center;
@@ -192,46 +191,21 @@
 	height: 862px;
 }
 
-#skillContainerMobile .swiper-slide {
-	width: 100%;
-	height: 100%;
-}
-
-#skillContainerMobile .skillBgMobile {
-	width: 650px;
-	height: 862px;
-	background-image: url("../assets/kynang/kynang_skill_container_bg_mobile.png");
-	background-position: 100% 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
 #skillContainerMobile .skillMobile {
-	display: block;
 	width: 631px;
 	height: 576px;
+	display: block;
 	margin-inline: auto;
+	padding-top: 10px;
 }
 
 #skillContainerMobile .playVideoMobile {
 	position: absolute;
-	right: 30px;
-	top: 150px;
+	top: 140px;
+	right: 100px;
 	background-image: url("../assets/kynang/kynang_button_container_bg.png");
 	width: 64px;
 	height: 154px;
-}
-
-#skillContainerMobile .skillTextMobile {
-	font-size: 48px;
-	text-align: justify;
-	color: yellow;
-	width: 90px;
-	position: absolute;
-	top: -130px;
-	left: 50%;
-	transform: translateX(-50%);
 }
 
 #skillContainerMobile .playVideoButtonFrame3Mobile {
@@ -239,44 +213,100 @@
 	width: 49px;
 	height: 49px;
 	position: absolute;
+	top: 30px;
 	left: 50%;
-	top: 25px;
+	transform: translateX(-50%);
+}
+
+#skillContainerMobile .skillTextMobile {
+	color: rgb(250 243 223);
+	font-weight: bold;
+	position: absolute;
+	top: -100px;
+	font-size: 36px;
+	left: 50%;
 	transform: translateX(-50%);
 }
 
 #skillContainerMobile .descriptionContainerMobile {
-	height: 200px;
-	padding: 10px 20px;
-	outline: 1px solid red;
 	display: flex;
-	gap: 10px;
 	align-items: flex-start;
-}
-
-#skillContainerMobile .descriptionContainerMobile > div {
-	width: 100%;
-	height: 100%;
-	display: grid;
-	grid-template-rows: 2fr 8fr;
+	gap: 20px;
+	padding: 10px 20px;
+	margin-top: 20px;
 }
 
 #skillContainerMobile .skillNameMobile {
-	font-size: 36px;
+	font-size: 30px;
 	font-weight: bold;
-	color: red;
+	color: rgb(161 62 75);
+	margin-bottom: 10px;
 }
 
 #skillContainerMobile .skillDescriptionMobile {
-	line-height: 26px;
-	font-size: 22px;
 	text-align: justify;
-	max-height: calc(26px * 5);
+	font-size: 20px;
+	line-height: 22px;
+	max-height: calc(22px * 5);
 	overflow: hidden;
 }
 
-#skillContainerMobile .skillIconMobile {
-	width: 99px;
-	height: 99px;
+#skillContainerMobile .skill-swiper {
+	width: 768px;
+	height: 862px;
+	position: relative;
+}
+
+#skillContainerMobile .swiper-slide {
+	width: 644px;
+	height: 862px;
+}
+
+#skillContainerMobile .skillBgMobile {
+	width: 644px;
+	height: 862px;
+	margin-inline: auto;
+	background-image: url("../assets/kynang/kynang_skill_container_bg_mobile.png");
+	background-size: 100% 100%;
+}
+
+.skill-swiper :is(.swiper-button-prev, .swiper-button-next) {
+	background-image: url("../assets/kynang/kynang_next_button.png");
+	width: 38px;
+	height: 69px;
+	top: 350px !important;
+	position: absolute;
+}
+
+.skill-swiper :is(.swiper-button-prev, .swiper-button-next)::after {
+	display: none;
+}
+
+.skill-swiper .swiper-button-next {
+	transform: scaleX(-1);
+}
+.skill-swiper .swiper-button-next:hover {
+	transform: scale(-1.1);
+}
+
+.skill-swiper .swiper-pagination {
+	bottom: -150px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.skill-swiper :is(.swiper-pagination-bullet, .swiper-pagination-bullet-active) {
+	background-image: url("../assets/kynang/kynang_icon.png");
+	background-size: 100% 100%;
+	width: 96px !important;
+	height: 96px !important;
+	background-color: transparent;
+	opacity: 0.75;
+}
+.skill-swiper .swiper-pagination-bullet-active {
+	scale: 1.1;
+	opacity: 1;
 }
 
 @media screen and (max-width: 768px) {

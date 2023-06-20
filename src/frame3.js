@@ -9,9 +9,10 @@ const descriptions = [
 	"Gây cho nhiều kẻ địch xung quanh sát thương thủy; Gây sát thương băng cho nhiều kể địch xung quanh Phân Thân. Khi Họa Thủy Lâu Băng gây sát thương thủy và băng sẽ giảm Kháng Thủy và Kháng Băng kẻ địch, khi gây sát thương băng cho kẻ địch, nếu dinh lực mục tiêu thấp hơn 30% sẽ có xác suất khiến mục tiêu bị đóng băng. Kỹ năng là đoạn 2 của Lâm Kính Tự Tả.",
 	"Giúp bản thân tạm thời tăng Kháng Hỗn Loạn và Tăng Hỗn Loạn. Kỹ năng là đoạn 2 của Hỗn La Y.",
 	"Tăng di chuyển và tốc độ vật công của bản thân, khi tốc độ đánh bản thân khá cao sẽ không tăng tốc đánh mà chuyển thành vật công. Kỹ năng là đoạn 2 của Ngưng Sương.",
-	"Tăng di chuyển và tốc độ vật công của bản thân, khi tốc độ đánh bản thân khá cao sẽ không tăng tốc đánh mà chuyển thành vật công. Kỹ năng là đoạn 2 của Ngưng Sương.",
+	"Giúp bản thân tăng phòng thủ, trong thời gian này khi bị khống chế, kháng khống chế thường của bản thân sẽ tăng. Bát Hoang Sát là kỹ năng đoạn 2 của Huyết Tinh Sát",
 	"Trị liệu bản thân và 1 đồng đội bị thương ở gần, hồi ít sinh lực tối đa. Đồng thời kèm hiệu quả của Hạ Phồn cho bản thân và đồng đội được trị liệu. Khi có hiệu quả Hạ Phồn, kháng khống chế thường tăng, khi sinh lực dưới 20% chịu sát thương sẽ xóa hiệu quả Hạ Phồn, bên cạnh đó sẽ hồi phục sinh lực. Kỹ năng đoạn 2 là Thiên Tiên Tử.",
 ];
+
 const names = ["Họa hồn", "Mị giả", "Xạ thủ", "Yển Sư", "Y Sư"];
 const maxSkills = books.length;
 const mobileIcons = kynangAssets.mobileIcons;
@@ -78,11 +79,6 @@ export default function runFrame3() {
 		skillName.innerText = info[skillId].skillName;
 		skillDescription.innerText = info[skillId].description;
 		skillText.innerText = info[skillId].name;
-
-		// mobile
-		skillIconMobile.src = info[skillId].icon;
-		skillNameMobile.innerText = info[skillId].skillName;
-		skillDescriptionMobile.innerText = info[skillId].description;
 	}
 
 	prevButton.addEventListener("click", () => {
@@ -92,18 +88,18 @@ export default function runFrame3() {
 		onClick(1);
 	});
 
-	//mobileIcon
-	const mobileIconContainer = document.getElementById("mobileIconContainer");
-	info.map((item, index) => {
-		const button = document.createElement("button");
-		const buttonImg = new Image();
-		buttonImg.src = item.mobileIcon;
-		button.appendChild(buttonImg);
-		// button.onclick = () => {
-		// 	onClick(index, true);
-		// };
-		mobileIconContainer.appendChild(button);
-	});
+	// //mobileIcon
+	// const mobileIconContainer = document.getElementById("mobileIconContainer");
+	// info.map((item, index) => {
+	// 	const button = document.createElement("button");
+	// 	const buttonImg = new Image();
+	// 	buttonImg.src = item.mobileIcon;
+	// 	button.appendChild(buttonImg);
+	// 	// button.onclick = () => {
+	// 	// 	onClick(index, true);
+	// 	// };
+	// 	mobileIconContainer.appendChild(button);
+	// });
 
 	const skillSwiper = new Swiper(".skill-swiper", {
 		slidesPerView: 1,
@@ -111,5 +107,13 @@ export default function runFrame3() {
 		loop: false,
 		centeredSlides: true,
 		grabCursor: true,
+		navigation: {
+			nextEl: ".skill-swiper .swiper-button-next",
+			prevEl: ".skill-swiper .swiper-button-prev",
+		},
+		pagination: {
+			el: ".skill-swiper .swiper-pagination",
+			clickable: true,
+		},
 	});
 }

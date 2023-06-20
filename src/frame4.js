@@ -43,7 +43,7 @@ export default function runFrame4() {
 		centeredSlides: true,
 		grabCursor: true,
 		pagination: {
-			el: ".swiper-pagination",
+			el: ".swiper .swiper-pagination",
 			type: "bullets",
 			clickable: true,
 		},

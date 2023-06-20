@@ -212,7 +212,7 @@
 @media screen and (max-width: 768px) {
 	#popupContainer,
 	#popupVideoContainer {
-		width: 668px;
+		width: 768px;
 	}
 
 	#popupVideoContainer {
@@ -220,6 +220,9 @@
 	}
 
 	#popupCloseButton {
-		display: none;
+		bottom: -60px;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }

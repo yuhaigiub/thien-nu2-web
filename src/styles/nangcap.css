@@ -8,7 +8,7 @@
 	background-image: url("../assets/nangcap/nangcap_title.png");
 	width: 1136px;
 	height: 132px;
-	margin-top: 100px;
+	margin-top: 225px;
 }
 
 #buttonsContainer {
@@ -144,8 +144,7 @@
 	transform: translate(-50%);
 }
 
-.swiper-pagination-bullet,
-.swiper-pagination-bullet-active {
+.swiper :is(.swiper-pagination-bullet, .swiper-pagination-bullet-active) {
 	background-image: url("../assets/nangcap/nangcap_pagination_button.png");
 	background-size: 100% 100%;
 	width: 31px !important;
@@ -153,8 +152,7 @@
 	background-color: transparent;
 	opacity: 1;
 }
-
-.swiper-pagination-bullet-active {
+.swiper .swiper-pagination-bullet-active {
 	transform: scale(1.5);
 }
 

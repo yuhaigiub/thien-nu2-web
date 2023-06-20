@@ -7,27 +7,17 @@ import "./styles/nangcap.css";
 import "./styles/maychu.css";
 import "./styles/popup.css";
 
-import runFrame1 from "./frame1";
+import runFrame1, { progressLineProcess } from "./frame1";
 import runFrame2 from "./frame2";
 import runFrame3 from "./frame3";
 import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
 
-import Swiper, { Pagination } from "swiper";
+import Swiper, { Pagination, Navigation } from "swiper";
 
-Swiper.use([Pagination]);
+Swiper.use([Pagination, Navigation]);
 
-// UNIVERSAL CONSTANT (never change or must be taken from other sources)
-export let maxUser = 15000;
 // ------------------------------------------------------------------------
-
-// test
-// const target = document.querySelector("#announcement span");
-// const testInput = document.getElementById("testInput");
-// const testButton = document.getElementById("testButton");
-// testButton.onclick = () => {
-// 	target.innerText = parseInt(testInput.value);
-// };
 
 runFrame1();
 runFrame2();
@@ -53,8 +43,8 @@ function scaleRoot() {
 		height = root.offsetHeight;
 		ratio = width / height;
 		mode = mode === "pc" ? "mobile" : "pc";
-		maxUser = mode === "pc" ? 15000 : 15000;
-		console.log(`switch to ${mode}`);
+		const numberOfUser = parseInt(document.querySelector("#announcement span").innerText);
+		progressLineProcess(numberOfUser);
 	}
 
 	const desiredWidth = window.innerWidth;
