@@ -1,19 +1,19 @@
 import { setPopupContent, setPopupTitle, togglePopup } from "./popup.js";
 import { setVideo } from "./videos.js";
 
-export const progressLineProcess = (fallback, mutationList, observer) => {
+export const progressLineProcess = (fallback, fallbackTarget, mutationList, observer) => {
 	let numberOfUser;
 	try {
-		numberOfUser = mutationList[0].addedNodes[0].data;
+		numberOfUser = parseInt(mutationList[0].addedNodes[0].data.replace(".", ""));
 	} catch {
-		console.log("something wrong with number of user");
+		// console.log("something wrong with number of user");
 		numberOfUser = fallback;
 	}
+
 	const maxWidth = document.getElementById("progressLine").offsetWidth;
 
 	//
 	const checkpoints = [maxWidth * 0.2, maxWidth * 0.4, maxWidth * 0.6, maxWidth * 0.8, maxWidth];
-	console.log(checkpoints);
 
 	let desiredWidth = 0;
 	if (numberOfUser <= 3000) {
@@ -26,10 +26,10 @@ export const progressLineProcess = (fallback, mutationList, observer) => {
 		desiredWidth = checkpoints[1] + ((numberOfUser - 5000) / (10000 - 5000)) * (checkpoints[2] - checkpoints[1]);
 	} else if (numberOfUser <= 15000) {
 		desiredWidth = checkpoints[2] + ((numberOfUser - 10000) / (15000 - 10000)) * (checkpoints[3] - checkpoints[2]);
-		console.log(`checkpoint2 ${desiredWidth}`);
+		// console.log(`checkpoint2 ${desiredWidth}`);
 	} else {
 		desiredWidth = checkpoints[3] + Math.min((numberOfUser - 15000) / 3000, 1) * (checkpoints[4] - checkpoints[3]);
-		console.log(`checkpoint3 ${desiredWidth}`);
+		// console.log(`checkpoint3 ${desiredWidth}`);
 	}
 
 	const innerProgressLine = document.getElementById("innerProgressLine");
@@ -45,7 +45,7 @@ export const progressLineProcess = (fallback, mutationList, observer) => {
 
 export default function runFrame1() {
 	const target = document.querySelector("#announcement span");
-	let numberOfUser = parseInt(target.innerText);
+	let numberOfUser = parseInt(target.innerText.replace(".", ""));
 
 	const playVideoButton = document.getElementById("playButton");
 	playVideoButton.onclick = () => {
@@ -78,11 +78,11 @@ export default function runFrame1() {
 	// observer (on number of user change)
 
 	// initial call
-	progressLineProcess(numberOfUser);
+	progressLineProcess(numberOfUser, target);
 
 	// announcement
 	const observer = new MutationObserver((mutationList, observer) => {
-		progressLineProcess(numberOfUser, mutationList, observer);
+		progressLineProcess(numberOfUser, target, mutationList, observer);
 	});
 	observer.observe(target, { attributes: true, childList: true, characterData: true });
 

@@ -6,7 +6,7 @@
 #container5 > .title {
 	background-image: url("../assets/maychu/maychu_title.png");
 	width: 942px;
-	aspect-ratio: 942/163;
+	height: 163px;
 	margin-top: 150px;
 }
 
@@ -87,7 +87,9 @@ footer {
 	}
 
 	#container5 > .title {
-		width: 768px;
+		width: 680px;
+		height: 180px;
+		background-size: 100% 100%;
 		margin-top: 0px;
 		margin-bottom: 20px;
 	}

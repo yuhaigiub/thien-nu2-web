@@ -1,4 +1,6 @@
 import { kynangAssets } from "./import_assets";
+import { togglePopup } from "./popup";
+import { setYoutube } from "./videos";
 import Swiper from "swiper";
 
 const books = kynangAssets.books;
@@ -13,9 +15,16 @@ const descriptions = [
 	"Trị liệu bản thân và 1 đồng đội bị thương ở gần, hồi ít sinh lực tối đa. Đồng thời kèm hiệu quả của Hạ Phồn cho bản thân và đồng đội được trị liệu. Khi có hiệu quả Hạ Phồn, kháng khống chế thường tăng, khi sinh lực dưới 20% chịu sát thương sẽ xóa hiệu quả Hạ Phồn, bên cạnh đó sẽ hồi phục sinh lực. Kỹ năng đoạn 2 là Thiên Tiên Tử.",
 ];
 
-const names = ["Họa hồn", "Mị giả", "Xạ thủ", "Yển Sư", "Y Sư"];
+const names = ["Họa Hồn", "Mị Giả", "Xạ Thủ", "Yển Sư", "Y Sư"];
 const maxSkills = books.length;
 const mobileIcons = kynangAssets.mobileIcons;
+export const youtubeLinks = [
+	"https://www.youtube.com/embed/YonS9_QJbp8",
+	"https://www.youtube.com/embed/HxM_ZV2i0C4",
+	"https://www.youtube.com/embed/jfobiCq0YUc",
+	"https://www.youtube.com/embed/i0Q7T_9vNNE",
+	"https://www.youtube.com/embed/r_0JjYUe5jo",
+];
 
 const info = names.map((_, index) => {
 	return {
@@ -26,6 +35,7 @@ const info = names.map((_, index) => {
 		skillName: skillNames[index],
 		description: descriptions[index],
 		mobileIcon: mobileIcons[index],
+		youtubeLink: youtubeLinks[index],
 	};
 });
 
@@ -61,6 +71,12 @@ export default function runFrame3() {
 	const skillText = document.getElementById("skillText");
 	skillText.innerText = info[skillId].name;
 
+	const playVideoButtonFrame3 = document.getElementById("playVideoButtonFrame3");
+	playVideoButtonFrame3.onclick = () => {
+		togglePopup(true, "youtube");
+		setYoutube(youtubeLinks[skillId]);
+	};
+
 	// buttons
 	const prevButton = document.getElementById("prevButton");
 	const nextButton = document.getElementById("nextButton");
@@ -79,6 +95,10 @@ export default function runFrame3() {
 		skillName.innerText = info[skillId].skillName;
 		skillDescription.innerText = info[skillId].description;
 		skillText.innerText = info[skillId].name;
+		playVideoButtonFrame3.onclick = () => {
+			togglePopup(true, "youtube");
+			setYoutube(youtubeLinks[skillId]);
+		};
 	}
 
 	prevButton.addEventListener("click", () => {
@@ -88,19 +108,7 @@ export default function runFrame3() {
 		onClick(1);
 	});
 
-	// //mobileIcon
-	// const mobileIconContainer = document.getElementById("mobileIconContainer");
-	// info.map((item, index) => {
-	// 	const button = document.createElement("button");
-	// 	const buttonImg = new Image();
-	// 	buttonImg.src = item.mobileIcon;
-	// 	button.appendChild(buttonImg);
-	// 	// button.onclick = () => {
-	// 	// 	onClick(index, true);
-	// 	// };
-	// 	mobileIconContainer.appendChild(button);
-	// });
-
+	// mobile
 	const skillSwiper = new Swiper(".skill-swiper", {
 		slidesPerView: 1,
 		direction: "horizontal",

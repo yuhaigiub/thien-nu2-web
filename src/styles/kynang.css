@@ -7,7 +7,7 @@
 	background-image: url("../assets/kynang/kynang_title.png");
 	width: 941px;
 	aspect-ratio: 941/132;
-	margin-top: 50px;
+	margin-top: 150px;
 	margin-bottom: 120px;
 }
 
@@ -128,7 +128,8 @@
 	height: 200px;
 	align-self: center;
 	position: absolute;
-	bottom: -40px;
+	bottom: -200px;
+	z-index: 5;
 }
 
 #skillIcon {

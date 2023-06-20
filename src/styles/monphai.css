@@ -7,7 +7,7 @@
 	background-image: url("../assets/monphai/monphai_title.png");
 	width: 941px;
 	height: 132px;
-	margin-top: 300px;
+	margin-top: 350px;
 }
 
 #characterBg {
@@ -44,7 +44,7 @@
 	width: 70%;
 	height: 128px;
 	position: absolute;
-	bottom: 110px;
+	bottom: 120px;
 	left: 40px;
 	color: white;
 	padding-inline: 10px;
@@ -74,8 +74,9 @@
 	justify-content: center;
 	align-items: center;
 	color: white;
-	bottom: 16px;
+	bottom: 8px;
 	left: 15%;
+	font-size: 22px;
 }
 
 #swapCharacterButton {
@@ -128,14 +129,15 @@
 @media screen and (max-width: 768px) {
 	#container2 {
 		width: 768px;
-		height: 1601px;
+		height: 1401px;
 		background-image: url("../assets/monphai/monphai_bg_mobile.jpg");
+		background-size: 100% 100%;
 	}
 
 	#container2 > .title {
 		width: 768px;
 		height: 119px;
-		margin-top: 300px;
+		margin-top: 400px;
 	}
 
 	#characterBg {

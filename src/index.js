@@ -34,8 +34,6 @@ let width = root.offsetWidth;
 let height = root.offsetHeight;
 let ratio = width / height;
 
-console.log(width, height);
-
 function scaleRoot() {
 	if ((window.innerWidth <= 768 && mode !== "mobile") || (window.innerWidth > 768 && mode !== "pc")) {
 		// mobile
@@ -43,8 +41,9 @@ function scaleRoot() {
 		height = root.offsetHeight;
 		ratio = width / height;
 		mode = mode === "pc" ? "mobile" : "pc";
-		const numberOfUser = parseInt(document.querySelector("#announcement span").innerText);
-		progressLineProcess(numberOfUser);
+		const target = document.querySelector("#announcement span");
+		const numberOfUser = parseInt(target.innerText.replace(".", ""));
+		progressLineProcess(numberOfUser, target);
 	}
 
 	const desiredWidth = window.innerWidth;

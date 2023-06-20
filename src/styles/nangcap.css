@@ -8,7 +8,7 @@
 	background-image: url("../assets/nangcap/nangcap_title.png");
 	width: 1136px;
 	height: 132px;
-	margin-top: 225px;
+	margin-top: 350px;
 }
 
 #buttonsContainer {
@@ -137,7 +137,7 @@
 	background-repeat: repeat-x;
 	gap: 30px;
 	height: 31px;
-	width: 390px !important;
+	width: fit-content !important;
 	background-position: center;
 	position: absolute !important;
 	left: 50%;
@@ -183,7 +183,7 @@
 	#container4 > .title {
 		width: 398px;
 		height: 180px;
-		margin-top: 0;
+		margin-top: 25px;
 		background-image: url("../assets/nangcap/nangcap_title_mobile.png");
 	}
 
