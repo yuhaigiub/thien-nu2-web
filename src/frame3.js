@@ -72,10 +72,7 @@ export default function runFrame3() {
 	skillText.innerText = info[skillId].name;
 
 	const playVideoButtonFrame3 = document.getElementById("playVideoButtonFrame3");
-	playVideoButtonFrame3.onclick = () => {
-		togglePopup(true, "youtube");
-		setYoutube(youtubeLinks[skillId]);
-	};
+	playVideoButtonFrame3.onclick = () => {};
 
 	// buttons
 	const prevButton = document.getElementById("prevButton");
@@ -95,10 +92,7 @@ export default function runFrame3() {
 		skillName.innerText = info[skillId].skillName;
 		skillDescription.innerText = info[skillId].description;
 		skillText.innerText = info[skillId].name;
-		playVideoButtonFrame3.onclick = () => {
-			togglePopup(true, "youtube");
-			setYoutube(youtubeLinks[skillId]);
-		};
+		playVideoButtonFrame3.onclick = () => {};
 	}
 
 	prevButton.addEventListener("click", () => {

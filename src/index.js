@@ -1,5 +1,4 @@
 import "./styles/general.css";
-
 import "./styles/main.css";
 import "./styles/monphai.css";
 import "./styles/kynang.css";
@@ -13,9 +12,15 @@ import runFrame3 from "./frame3";
 import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
 
-import Swiper, { Pagination, Navigation } from "swiper";
+import "animate.css";
 
+import Swiper, { Pagination, Navigation } from "swiper";
 Swiper.use([Pagination, Navigation]);
+
+// jquery and fancybox
+const $ = require("jquery");
+window.jQuery = $;
+require("@fancyapps/fancybox");
 
 // ------------------------------------------------------------------------
 
@@ -27,7 +32,6 @@ runFrame5();
 
 const outerRoot = document.getElementById("outerRoot");
 const root = document.getElementById("root");
-const popup = document.getElementById("popupScale");
 root.style.transformOrigin = "top left";
 
 let mode, width, height, ratio;
@@ -42,17 +46,6 @@ function scaleRoot() {
 	const numberOfUser = parseInt(target.innerText.replace(".", ""));
 	progressLineProcess(numberOfUser);
 
-	// if ((window.innerWidth <= 768 && mode !== "mobile") || (window.innerWidth > 768 && mode !== "pc")) {
-	// 	// mobile
-	// 	width = root.offsetWidth;
-	// 	height = root.offsetHeight;
-	// 	ratio = width / height;
-	// 	mode = mode === "pc" ? "mobile" : "pc";
-	// 	const target = document.querySelector("#announcement span");
-	// 	const numberOfUser = parseInt(target.innerText.replace(".", ""));
-	// 	progressLineProcess(numberOfUser);
-	// }
-
 	const desiredWidth = window.innerWidth;
 	const desiredHeight = desiredWidth / ratio;
 
@@ -62,16 +55,7 @@ function scaleRoot() {
 	outerRoot.style.height = `${desiredHeight}px`;
 
 	root.style.transform = `scale(${ratioW}, ${ratioH})`;
-	popup.style.transform = `scale(${ratioW}, ${ratioH})`;
 }
-
-// // debug
-// const cb = (mutationList, observer) => {
-// 	console.log("observer said that blackScreen state changed");
-// };
-// const blackScreen = document.getElementById("popupBlackScreen");
-// const obs = new MutationObserver(cb);
-// obs.observe(blackScreen, { attributes: true, childList: true, characterData: true });
 
 window.addEventListener("load", scaleRoot);
 window.addEventListener("resize", scaleRoot);

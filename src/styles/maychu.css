@@ -22,10 +22,6 @@
 	transition: transform 400ms ease-in;
 }
 
-#characterDecorate:hover {
-	transform: scale(1);
-}
-
 #itemDecorate {
 	width: 797px;
 	height: 919px;
@@ -45,9 +41,6 @@
 	top: 300px;
 	transform: scale(0.8);
 	transition: transform 250ms ease-in;
-}
-#ctaButton:hover {
-	transform: scale(0.9);
 }
 
 footer {

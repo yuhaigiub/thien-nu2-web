@@ -21,6 +21,9 @@
 		"webpack-dev-server": "^4.15.1"
 	},
 	"dependencies": {
+		"@fancyapps/fancybox": "^3.5.7",
+		"animate.css": "^4.1.1",
+		"jquery": "^3.7.0",
 		"swiper": "^9.4.1"
 	}
 }

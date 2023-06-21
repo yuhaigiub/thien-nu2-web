@@ -45,11 +45,6 @@
 	transition: scale 200ms ease-in;
 }
 
-:is(#homeButton, #downloadButton, #fbButton, #groupButton, #musicButton):hover {
-	filter: grayscale(0.85);
-	scale: 1.1;
-}
-
 /**/
 
 #titleContainer {
@@ -72,10 +67,6 @@
 	z-index: 1;
 	transition: scale 200ms ease-in;
 	background-image: url("../assets/main/main_play_video_button.png");
-}
-
-#playButton:hover {
-	scale: 1.1;
 }
 
 /**/
@@ -200,13 +191,14 @@
 }
 
 .progressItem[activate="true"] {
-	animation-name: wobble;
-	animation-duration: 3s;
+	animation-name: my-animation;
+	animation-duration: 5s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+	transform-origin: center;
 }
 
-@keyframes wobble {
+@keyframes my-animation {
 	0% {
 		transform: scale(1);
 	}
@@ -431,10 +423,5 @@
 
 	#headerMobile {
 		display: flex !important;
-	}
-
-	#headerMobile > #right > button:hover {
-		transform: scaleY(1.1);
-		transform-origin: top center;
 	}
 }

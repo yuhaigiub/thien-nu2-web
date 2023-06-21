@@ -1,6 +1,3 @@
-import { setPopupContent, setPopupTitle, togglePopup } from "./popup.js";
-import { setVideo } from "./videos.js";
-
 export const progressLineProcess = (fallback, mutationList, observer) => {
 	let numberOfUser;
 	try {
@@ -48,32 +45,17 @@ export default function runFrame1() {
 	let numberOfUser = parseInt(target.innerText.replace(".", ""));
 
 	const playVideoButton = document.getElementById("playButton");
-	playVideoButton.onclick = () => {
-		togglePopup(true, "video");
-		setVideo("main");
-	};
+	playVideoButton.onclick = () => {};
 
 	// open popup
 	const henUocButton = document.getElementById("henUocButton");
 	const henUocButtonMobile = document.getElementById("henUocButtonMobile");
 	const theLeButton = document.getElementById("theLeButton");
-	henUocButton.onclick = () => {
-		togglePopup(true);
-		setPopupTitle("dang_ky_hen_uoc");
-		setPopupContent("dang_ky_hen_uoc");
-	};
+	henUocButton.onclick = () => {};
 
-	henUocButtonMobile.onclick = () => {
-		togglePopup(true);
-		setPopupTitle("dang_ky_hen_uoc");
-		setPopupContent("dang_ky_hen_uoc");
-	};
+	henUocButtonMobile.onclick = () => {};
 
-	theLeButton.onclick = () => {
-		togglePopup(true);
-		setPopupTitle("the_le");
-		setPopupContent("the_le");
-	};
+	theLeButton.onclick = () => {};
 
 	// observer (on number of user change)
 

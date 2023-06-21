@@ -37,10 +37,6 @@
 	transform: scaleX(-1);
 }
 
-#nextButton:hover {
-	transform: scale(-1.1);
-}
-
 #skillBg {
 	width: 1155px;
 	height: 605px;
@@ -285,9 +281,6 @@
 
 .skill-swiper .swiper-button-next {
 	transform: scaleX(-1);
-}
-.skill-swiper .swiper-button-next:hover {
-	transform: scale(-1.1);
 }
 
 .skill-swiper .swiper-pagination {

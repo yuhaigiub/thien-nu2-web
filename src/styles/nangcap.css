@@ -31,14 +31,6 @@
 	border: none;
 }
 
-#buttonsContainer > button:hover,
-#buttonsContainer > button[active="true"] {
-	filter: grayscale(0) contrast(150%);
-}
-#buttonsContainer > button:hover {
-	transform: scaleX(1.1);
-}
-
 #buttonsContainer > button > p {
 	color: white;
 	overflow: hidden;
