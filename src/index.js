@@ -29,22 +29,28 @@ const root = document.getElementById("root");
 const popup = document.getElementById("popupScale");
 root.style.transformOrigin = "top left";
 
-let mode = "pc";
-let width = root.offsetWidth;
-let height = root.offsetHeight;
-let ratio = width / height;
+let mode, width, height, ratio;
 
 function scaleRoot() {
-	if ((window.innerWidth <= 768 && mode !== "mobile") || (window.innerWidth > 768 && mode !== "pc")) {
-		// mobile
-		width = root.offsetWidth;
-		height = root.offsetHeight;
-		ratio = width / height;
-		mode = mode === "pc" ? "mobile" : "pc";
-		const target = document.querySelector("#announcement span");
-		const numberOfUser = parseInt(target.innerText.replace(".", ""));
-		progressLineProcess(numberOfUser, target);
-	}
+	// check on every trigger
+	mode = window.innerWidth <= 768 ? "mobile" : "pc";
+	width = root.offsetWidth;
+	height = root.offsetHeight;
+	ratio = width / height;
+	const target = document.querySelector("#announcement span");
+	const numberOfUser = parseInt(target.innerText.replace(".", ""));
+	progressLineProcess(numberOfUser);
+
+	// if ((window.innerWidth <= 768 && mode !== "mobile") || (window.innerWidth > 768 && mode !== "pc")) {
+	// 	// mobile
+	// 	width = root.offsetWidth;
+	// 	height = root.offsetHeight;
+	// 	ratio = width / height;
+	// 	mode = mode === "pc" ? "mobile" : "pc";
+	// 	const target = document.querySelector("#announcement span");
+	// 	const numberOfUser = parseInt(target.innerText.replace(".", ""));
+	// 	progressLineProcess(numberOfUser);
+	// }
 
 	const desiredWidth = window.innerWidth;
 	const desiredHeight = desiredWidth / ratio;

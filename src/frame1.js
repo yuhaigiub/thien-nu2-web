@@ -1,7 +1,7 @@
 import { setPopupContent, setPopupTitle, togglePopup } from "./popup.js";
 import { setVideo } from "./videos.js";
 
-export const progressLineProcess = (fallback, fallbackTarget, mutationList, observer) => {
+export const progressLineProcess = (fallback, mutationList, observer) => {
 	let numberOfUser;
 	try {
 		numberOfUser = parseInt(mutationList[0].addedNodes[0].data.replace(".", ""));
@@ -78,11 +78,11 @@ export default function runFrame1() {
 	// observer (on number of user change)
 
 	// initial call
-	progressLineProcess(numberOfUser, target);
+	progressLineProcess(numberOfUser);
 
 	// announcement
 	const observer = new MutationObserver((mutationList, observer) => {
-		progressLineProcess(numberOfUser, target, mutationList, observer);
+		progressLineProcess(numberOfUser, mutationList, observer);
 	});
 	observer.observe(target, { attributes: true, childList: true, characterData: true });
 
