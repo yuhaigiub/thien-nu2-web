@@ -66,12 +66,13 @@
 	border: none;
 }
 
-#buttonsContainer > button[isActive="true"] {
-	filter: none;
+#buttonsContainer > button[isActive="false"]:not(:hover) {
+	filter: grayscale(0.8);
 }
 
-#buttonsContainer > button[isActive="false"] {
-	filter: grayscale(0.8);
+#buttonsContainer > button[isActive="true"],
+#buttonContainer > button:hover {
+	filter: none;
 }
 
 #buttonsContainer > button > p {
