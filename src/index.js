@@ -25,6 +25,7 @@ runFrame3();
 runFrame4();
 runFrame5();
 
+const outerRoot = document.getElementById("outerRoot");
 const root = document.getElementById("root");
 const popup = document.getElementById("popupScale");
 root.style.transformOrigin = "top left";
@@ -57,6 +58,8 @@ function scaleRoot() {
 
 	const ratioW = desiredWidth / width;
 	const ratioH = desiredHeight / height;
+
+	outerRoot.style.height = `${desiredHeight}px`;
 
 	root.style.transform = `scale(${ratioW}, ${ratioH})`;
 	popup.style.transform = `scale(${ratioW}, ${ratioH})`;
