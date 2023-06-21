@@ -64,7 +64,7 @@ function scaleRoot() {
 
 // debug
 const cb = (mutationList, observer) => {
-	console.log("blackScreen state change");
+	console.log("observer said that blackScreen state changed");
 };
 const blackScreen = document.getElementById("popupBlackScreen");
 const obs = new MutationObserver(cb);
