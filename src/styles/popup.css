@@ -12,6 +12,10 @@
 	align-items: center;
 	overflow: hidden;
 }
+#popupBlackScreen[isOpen="true"] {
+	opacity: 1 !important;
+	pointer-events: all !important;
+}
 
 #popupBlackScreen[type="non-video"] #popupContainer {
 	display: block !important;
@@ -86,6 +90,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 }
 
 #popupSignUp > button {

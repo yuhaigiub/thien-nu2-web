@@ -1,3 +1,5 @@
+import { setVideo, setYoutube } from "./videos";
+
 const popupBlackScreen = document.getElementById("popupBlackScreen");
 const popupContainer = document.getElementById("popupContainer");
 const popupCloseButton = document.getElementById("popupCloseButton");
@@ -5,13 +7,21 @@ const popupTitle = document.getElementById("popupTitle");
 const currentServerButton = document.getElementById("currentServer");
 const newServerButton = document.getElementById("newServer");
 
+let opening = "none";
 export function togglePopup(open, type = "non-video") {
-	popupBlackScreen.style.opacity = open ? "1 !important" : "0 !important";
-	popupBlackScreen.style.pointerEvents = open ? "all !important" : "none !important";
-	popupBlackScreen.setAttribute("type", type);
-	if (!open) {
+	if (open) {
+		opening = type;
+		popupBlackScreen.setAttribute("isOpen", true);
+		popupBlackScreen.setAttribute("type", type);
+		document.body.style.overflowY = "hidden";
+	} else {
 		setPopupContent("none");
+		popupBlackScreen.removeAttribute("isOpen");
 		popupBlackScreen.setAttribute("type", "none");
+		if (opening === "youtube") setYoutube(""); // turn off youtube video by reseting the src
+		if (opening === "video") setVideo("none");
+		document.body.style.overflowY = "auto";
+		opening = "none";
 	}
 }
 

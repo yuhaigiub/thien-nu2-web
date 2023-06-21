@@ -24,25 +24,26 @@ export default function runFrame2() {
 	const swapCharacterButton = document.getElementById("swapCharacterButton");
 	swapCharacterButton.setAttribute("gender", isMale ? "male" : "female");
 
+	swapCharacterButton.onmouseleave = () => {
+		swapCharacterButton.setAttribute("gender", isMale ? "male" : "female");
+	};
+
 	const maleButton = document.querySelector("#swapCharacterButton #maleCharacter");
 	const femaleButton = document.querySelector("#swapCharacterButton #femaleCharacter");
 	maleButton.onmouseenter = () => {
 		swapCharacterButton.setAttribute("gender", "male");
 	};
-	maleButton.onmouseleave = () => {
-		characterDisplay.setAttribute("gender", isMale ? "male" : "female");
-	};
+
 	maleButton.onclick = () => {
 		isMale = true;
 		swapCharacterButton.setAttribute("gender", "male");
 		characterDisplay.setAttribute("gender", "male");
 	};
+
 	femaleButton.onmouseenter = () => {
 		swapCharacterButton.setAttribute("gender", "female");
 	};
-	femaleButton.onmouseleave = () => {
-		characterDisplay.setAttribute("gender", isMale ? "male" : "female");
-	};
+
 	femaleButton.onclick = () => {
 		isMale = false;
 		swapCharacterButton.setAttribute("gender", "female");
