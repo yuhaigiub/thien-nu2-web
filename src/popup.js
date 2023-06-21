@@ -16,7 +16,7 @@ export function togglePopup(open, type = "non-video") {
 		document.body.style.overflowY = "hidden";
 	} else {
 		setPopupContent("none");
-		popupBlackScreen.removeAttribute("isOpen");
+		popupBlackScreen.setAttribute("isOpen", false);
 		popupBlackScreen.setAttribute("type", "none");
 		if (opening === "youtube") setYoutube(""); // turn off youtube video by reseting the src
 		if (opening === "video") setVideo("none");
