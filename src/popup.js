@@ -6,8 +6,8 @@ const currentServerButton = document.getElementById("currentServer");
 const newServerButton = document.getElementById("newServer");
 
 export function togglePopup(open, type = "non-video") {
-	popupBlackScreen.style.opacity = open ? 1 : 0;
-	popupBlackScreen.style.pointerEvents = open ? "all" : "none";
+	popupBlackScreen.style.opacity = open ? "1 !important" : "0 !important";
+	popupBlackScreen.style.pointerEvents = open ? "all !important" : "none !important";
 	popupBlackScreen.setAttribute("type", type);
 	if (!open) {
 		setPopupContent("none");
