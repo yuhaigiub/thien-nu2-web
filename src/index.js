@@ -5,20 +5,23 @@ import "./styles/kynang.css";
 import "./styles/nangcap.css";
 import "./styles/maychu.css";
 import "./styles/popup.css";
+import "./styles/fancybox-styling.css";
 
 import runFrame1, { progressLineProcess } from "./frame1";
 import runFrame2 from "./frame2";
 import runFrame3 from "./frame3";
 import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
+import fancyBoxInit from "./fancybox-init";
 
-import "animate.css";
+// import "animate.css"; // save for later
 
 import Swiper, { Pagination, Navigation } from "swiper";
 Swiper.use([Pagination, Navigation]);
 
 // jquery and fancybox
 const $ = require("jquery");
+window.$ = $;
 window.jQuery = $;
 require("@fancyapps/fancybox");
 
@@ -29,6 +32,7 @@ runFrame2();
 runFrame3();
 runFrame4();
 runFrame5();
+fancyBoxInit();
 
 const outerRoot = document.getElementById("outerRoot");
 const root = document.getElementById("root");
