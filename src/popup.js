@@ -14,7 +14,7 @@ export function togglePopup(open, type = "non-video") {
 		popupBlackScreen.setAttribute("isOpen", true);
 		popupBlackScreen.setAttribute("type", type);
 		document.body.style.overflowY = "hidden";
-		console.log("popup blackscreen set to open");
+		// console.log("popup blackscreen set to open");
 	} else {
 		setPopupContent("none");
 		popupBlackScreen.setAttribute("isOpen", false);
@@ -23,7 +23,7 @@ export function togglePopup(open, type = "non-video") {
 		if (opening === "video") setVideo("none");
 		document.body.style.overflowY = "auto";
 		opening = "none";
-		console.log("popup blackscreen set to close");
+		// console.log("popup blackscreen set to close");
 	}
 }
 

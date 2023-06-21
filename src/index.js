@@ -65,13 +65,13 @@ function scaleRoot() {
 	popup.style.transform = `scale(${ratioW}, ${ratioH})`;
 }
 
-// debug
-const cb = (mutationList, observer) => {
-	console.log("observer said that blackScreen state changed");
-};
-const blackScreen = document.getElementById("popupBlackScreen");
-const obs = new MutationObserver(cb);
-obs.observe(blackScreen, { attributes: true, childList: true, characterData: true });
+// // debug
+// const cb = (mutationList, observer) => {
+// 	console.log("observer said that blackScreen state changed");
+// };
+// const blackScreen = document.getElementById("popupBlackScreen");
+// const obs = new MutationObserver(cb);
+// obs.observe(blackScreen, { attributes: true, childList: true, characterData: true });
 
 window.addEventListener("load", scaleRoot);
 window.addEventListener("resize", scaleRoot);
