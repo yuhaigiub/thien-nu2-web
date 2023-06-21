@@ -6,46 +6,49 @@ const options = nangcapAssets.options;
 const texts = nangcapAssets.texts;
 
 export default function runFrame4() {
-	let optionIndex = 0;
-	const optionImg = document.getElementById("optionImg");
-	const img = new Image();
-	img.src = options[optionIndex];
-	optionImg.appendChild(img);
+	let currentId;
+	const buttons = document.querySelectorAll("#buttonsContainer button");
 
-	//buttons
-	const buttons = [0, 1, 2, 3, 4].map((i) => {
-		const button = document.getElementById(`button${i}`);
-		button.setAttribute("active", i === optionIndex ? true : false);
-		return button;
-	});
-
-	// text
-	const optionText = document.getElementById("optionText");
-	const textImg = new Image();
-	textImg.src = texts[optionIndex];
-	optionText.append(textImg);
-
-	buttons.forEach((button, i) => {
-		button.addEventListener("click", () => {
-			buttons[optionIndex].setAttribute("active", false);
-			optionIndex = i;
-			button.setAttribute("active", true);
-			img.src = options[optionIndex];
-			textImg.src = texts[optionIndex];
-		});
-	});
-
-	// swiper
-	const swiper = new Swiper(".swiper", {
+	const swiperMobile = new Swiper(".frame4-swiper-mobile", {
 		slidesPerView: 1,
 		direction: "horizontal",
 		loop: false,
 		centeredSlides: true,
 		grabCursor: true,
 		pagination: {
-			el: ".swiper .swiper-pagination",
+			el: ".frame4-swiper-mobile .swiper-pagination",
 			type: "bullets",
 			clickable: true,
 		},
+	});
+
+	const swiperPC = new Swiper(".frame4-swiper-pc", {
+		slidesPerView: 1,
+		direction: "horizontal",
+		loop: false,
+		centeredSlides: true,
+		grabCursor: true,
+		on: {
+			init: function (swiper) {
+				currentId = swiper.activeIndex;
+				buttons[currentId].setAttribute("isActive", true);
+			},
+			slideChange: function (swiper) {
+				const newIndex = swiper.activeIndex;
+				buttons[currentId].setAttribute("isActive", false);
+				buttons[newIndex].setAttribute("isActive", true);
+				currentId = newIndex;
+			},
+		},
+	});
+
+	buttons.forEach((button, i) => {
+		button.onclick = () => {
+			swiperPC.slideTo(i);
+
+			buttons[currentId].setAttribute("isActive", false);
+			buttons[i].setAttribute("isActive", true);
+			currentId = i;
+		};
 	});
 }

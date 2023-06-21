@@ -32,6 +32,7 @@ export default function runFrame2() {
 		isMale = true;
 		swapCharacterButton.setAttribute("gender", "male");
 		characterDisplay.setAttribute("gender", "male");
+		textBox.innerHTML = isMale ? maleHTML : femaleHTML;
 	};
 
 	femaleButton.onmouseenter = () => {
@@ -42,5 +43,6 @@ export default function runFrame2() {
 		isMale = false;
 		swapCharacterButton.setAttribute("gender", "female");
 		characterDisplay.setAttribute("gender", "female");
+		textBox.innerHTML = isMale ? maleHTML : femaleHTML;
 	};
 }

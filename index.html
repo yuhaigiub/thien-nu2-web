@@ -106,18 +106,54 @@
 					<div class="title"></div>
 
 					<div id="skillContainer">
-						<button id="prevButton"></button>
-						<div id="skillBg">
-							<div id="playVideo">
-								<div id="skillText"></div>
-								<button id="playVideoButtonFrame3"></button>
-							</div>
-							<div id="butterflyDecoration"></div>
-							<div id="decorBook"></div>
-							<div id="book"></div>
-							<div id="skill"></div>
+						<img class="butterflyDecoration" src="./images/kynang_butterfly_decor.png" />
+						<div class="bookContainer">
+							<img class="book" src="./images/hoa_hon_book.png" />
+							<img class="decorBook" src="./images/kynang_book.png" />
 						</div>
-						<button id="nextButton"></button>
+						<div class="skillBg">
+							<div class="skill-swiper-pc">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="playVideo">
+											<div class="skillText">Họa Hồn</div>
+											<button class="playVideoButtonFrame3"></button>
+										</div>
+										<img class="skill" src="./images/hoa_hon_ingame.jpg" />
+									</div>
+									<div class="swiper-slide">
+										<div class="playVideo">
+											<div class="skillText">Mị Giả</div>
+											<button class="playVideoButtonFrame3"></button>
+										</div>
+										<img class="skill" src="./images/mi_gia_ingame.jpg" />
+									</div>
+									<div class="swiper-slide">
+										<div class="playVideo">
+											<div class="skillText">Xạ Thủ</div>
+											<button class="playVideoButtonFrame3"></button>
+										</div>
+										<img class="skill" src="./images/xa_thu_ingame.jpg" />
+									</div>
+									<div class="swiper-slide">
+										<div class="playVideo">
+											<div class="skillText">Y Sư</div>
+											<button class="playVideoButtonFrame3"></button>
+										</div>
+										<img class="skill" src="./images/y_su_ingame.jpg" />
+									</div>
+									<div class="swiper-slide">
+										<div class="playVideo">
+											<div class="skillText">Yển Sư</div>
+											<button class="playVideoButtonFrame3"></button>
+										</div>
+										<img class="skill" src="./images/yen_su_ingame.jpg" />
+									</div>
+								</div>
+							</div>
+							<button id="prevButton" class="swiper-button-prev"></button>
+							<button id="nextButton" class="swiper-button-next"></button>
+						</div>
 					</div>
 					<div id="descriptionContainer">
 						<img id="skillIcon" />
@@ -128,7 +164,7 @@
 					</div>
 
 					<div id="skillContainerMobile">
-						<div class="skill-swiper">
+						<div class="skill-swiper-mobile">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
 									<div class="skillBgMobile">
@@ -240,20 +276,43 @@
 				</div>
 				<div id="container4" class="containerType">
 					<div class="title"></div>
-					<div id="frame4PC">
-						<div id="optionImg">
-							<div id="optionTextDecor"></div>
-							<div id="optionText"></div>
+					<div id="frame4PC" class="frame4-swiper-pc">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide optionImg">
+								<img src="./images/nangcap_nang_cap_suc_manh.jpg" />
+								<div class="optionTextDecor"></div>
+								<img class="optionText" src="./images/nangcap_nang_cap_suc_manh_text.png" />
+							</div>
+							<div class="swiper-slide optionImg">
+								<img src="./images/nangcap_nang_cap_cua_hang.jpg" />
+								<div class="optionTextDecor"></div>
+								<img class="optionText" src="./images/nangcap_nang_cap_cua_hang_text.png" />
+							</div>
+							<div class="swiper-slide optionImg">
+								<img src="./images/nangcap_gia_vien_ky_ao.jpg" />
+								<div class="optionTextDecor"></div>
+								<img class="optionText" src="./images/nangcap_gia_vien_ky_ao_text.png" />
+							</div>
+							<div class="swiper-slide optionImg">
+								<img src="./images/nangcap_thay_doi_dien_mao.jpg" />
+								<div class="optionTextDecor"></div>
+								<img class="optionText" src="./images/nangcap_thay_doi_dien_mao_text.png" />
+							</div>
+							<div class="swiper-slide optionImg">
+								<img src="./images/nangcap_nang_cap_tien_ich.jpg" />
+								<div class="optionTextDecor"></div>
+								<img class="optionText" src="./images/nangcap_nang_cap_tien_ich_text.png" />
+							</div>
 						</div>
 						<div id="buttonsContainer">
-							<button id="button0"><p>Nâng cấp sức mạnh</p></button>
-							<button id="button1"><p>Nâng cấp cửa hàng</p></button>
-							<button id="button2"><p>Gia viên kỳ ảo</p></button>
-							<button id="button3"><p>Thay đổi diện mạo</p></button>
-							<button id="button4"><p>Nâng câp tiện ích</p></button>
+							<button id="button0" isActive="false"><p>Nâng cấp sức mạnh</p></button>
+							<button id="button1" isActive="false"><p>Nâng cấp cửa hàng</p></button>
+							<button id="button2" isActive="false"><p>Gia viên kỳ ảo</p></button>
+							<button id="button3" isActive="false"><p>Thay đổi diện mạo</p></button>
+							<button id="button4" isActive="false"><p>Nâng câp tiện ích</p></button>
 						</div>
 					</div>
-					<div id="frame4Mobile" class="swiper">
+					<div id="frame4Mobile" class="frame4-swiper-mobile">
 						<div class="swiper-wrapper">
 							<div class="optionImgMobile swiper-slide">
 								<img src="./images/nangcap_nang_cap_suc_manh_mobile.jpg" />

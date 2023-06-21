@@ -52,6 +52,9 @@ function scaleRoot() {
 	const ratioW = desiredWidth / width;
 	const ratioH = desiredHeight / height;
 
+	console.log(window.innerWidth, width, ratioW);
+
+	outerRoot.style.width = `${desiredWidth}px`;
 	outerRoot.style.height = `${desiredHeight}px`;
 
 	root.style.transform = `scale(${ratioW}, ${ratioH})`;

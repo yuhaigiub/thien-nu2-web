@@ -40,82 +40,50 @@ const info = names.map((_, index) => {
 });
 
 export default function runFrame3() {
-	let skillId = 0;
-	// skill background
-	const skillBg = document.getElementById("skill");
-	const skillImg = new Image();
-	skillImg.src = info[skillId].ingame;
-	skillImg.style.width = "100%";
-	skillImg.style.height = "100%";
-	skillBg.appendChild(skillImg);
-
-	// skill book
-	const book = document.getElementById("book");
-	const bookImg = new Image();
-	bookImg.src = info[skillId].book;
-	book.appendChild(bookImg);
-
-	// skillIcon
-	const skillIcon = document.getElementById("skillIcon");
-	skillIcon.src = info[skillId].icon;
-
-	// skillName
-	const skillName = document.getElementById("skillName");
-	skillName.innerText = info[skillId].skillName;
-
-	// skillDescription
-	const skillDescription = document.getElementById("skillDescription");
-	skillDescription.innerText = info[skillId].description;
-
-	// skillText
-	const skillText = document.getElementById("skillText");
-	skillText.innerText = info[skillId].name;
-
-	const playVideoButtonFrame3 = document.getElementById("playVideoButtonFrame3");
-	playVideoButtonFrame3.onclick = () => {};
-
-	// buttons
-	const prevButton = document.getElementById("prevButton");
-	const nextButton = document.getElementById("nextButton");
-	function onClick(x, jump = false) {
-		if (jump) {
-			skillId = x;
-		} else {
-			skillId = skillId + x;
-		}
-		if (skillId < 0) skillId = maxSkills - 1;
-		if (skillId === maxSkills) skillId = 0;
-
-		skillImg.src = ingames[skillId];
-		bookImg.src = books[skillId];
-		skillIcon.src = info[skillId].icon;
-		skillName.innerText = info[skillId].skillName;
-		skillDescription.innerText = info[skillId].description;
-		skillText.innerText = info[skillId].name;
-		playVideoButtonFrame3.onclick = () => {};
-	}
-
-	prevButton.addEventListener("click", () => {
-		onClick(-1);
-	});
-	nextButton.addEventListener("click", () => {
-		onClick(1);
-	});
+	const skillIcon = document.querySelector("#descriptionContainer #skillIcon");
+	const skillName = document.querySelector("#descriptionContainer #skillName");
+	const skillDescription = document.querySelector("#descriptionContainer #skillDescription");
 
 	// mobile
-	const skillSwiper = new Swiper(".skill-swiper", {
+	const skillSwiperMobile = new Swiper(".skill-swiper-mobile", {
 		slidesPerView: 1,
 		direction: "horizontal",
 		loop: false,
 		centeredSlides: true,
 		grabCursor: true,
 		navigation: {
-			nextEl: ".skill-swiper .swiper-button-next",
-			prevEl: ".skill-swiper .swiper-button-prev",
+			nextEl: ".skill-swiper-mobile .swiper-button-next",
+			prevEl: "skill-swiper-mobile .swiper-button-prev",
 		},
 		pagination: {
-			el: ".skill-swiper .swiper-pagination",
+			el: "skill-swiper-mobile .swiper-pagination",
 			clickable: true,
+		},
+	});
+
+	const skillSwiperPC = new Swiper(".skill-swiper-pc", {
+		slidesPerView: 1,
+		direction: "horizontal",
+		loop: false,
+		centeredSlides: true,
+		grabCursor: true,
+		navigation: {
+			nextEl: ".skillBg .swiper-button-next",
+			prevEl: ".skillBg .swiper-button-prev",
+		},
+		on: {
+			init: function (swiper) {
+				const index = swiper.activeIndex;
+				skillIcon.src = info[index].icon;
+				skillName.innerText = info[index].skillName;
+				skillDescription.innerText = info[index].description;
+			},
+			activeIndexChange: function (swiper) {
+				const index = swiper.activeIndex;
+				skillIcon.src = info[index].icon;
+				skillName.innerText = info[index].skillName;
+				skillDescription.innerText = info[index].description;
+			},
 		},
 	});
 }

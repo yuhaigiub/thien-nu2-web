@@ -14,6 +14,8 @@ import progressItem3 from "./assets/main/main_tien_do_item_3.png";
 import progressItem4 from "./assets/main/main_tien_do_item_4.png";
 
 // frame3
+import decorBook from "./assets/kynang/kynang_book.png";
+import butterflyDecor from "./assets/kynang/kynang_butterfly_decor.png";
 import hoaHonBook from "./assets/kynang/hoa_hon/hoa_hon_book.png";
 import miGiaBook from "./assets/kynang/mi_gia/mi_gia_book.png";
 import xaThuBook from "./assets/kynang/xa_thu/xa_thu_book.png";
