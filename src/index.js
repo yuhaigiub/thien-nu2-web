@@ -45,16 +45,6 @@ root.style.transformOrigin = "top left";
 
 let mode, width, height, ratio;
 
-function trackFirstAction(e) {
-	const musicButton = document.getElementById("musicButton");
-	musicButton.click();
-	window.removeEventListener("keypress", trackFirstAction);
-	window.removeEventListener("click", trackFirstAction);
-}
-
-window.addEventListener("click", trackFirstAction);
-window.addEventListener("keypress", trackFirstAction);
-
 function scaleRoot() {
 	// check on every trigger
 	mode = window.innerWidth <= 768 ? "mobile" : "pc";
