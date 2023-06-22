@@ -1,3 +1,4 @@
+import { fancyboxVideo } from "./fancybox-utils";
 import { kynangAssets } from "./import_assets";
 import { togglePopup } from "./popup";
 import { setYoutube } from "./videos";
@@ -19,11 +20,11 @@ const names = ["Họa Hồn", "Mị Giả", "Xạ Thủ", "Yển Sư", "Y Sư"];
 const maxSkills = books.length;
 const mobileIcons = kynangAssets.mobileIcons;
 export const youtubeLinks = [
-	"https://www.youtube.com/embed/YonS9_QJbp8",
-	"https://www.youtube.com/embed/HxM_ZV2i0C4",
-	"https://www.youtube.com/embed/jfobiCq0YUc",
-	"https://www.youtube.com/embed/i0Q7T_9vNNE",
-	"https://www.youtube.com/embed/r_0JjYUe5jo",
+	"https://www.youtube.com/watch?v=YonS9_QJbp8",
+	"https://www.youtube.com/watch?v=HxM_ZV2i0C4",
+	"https://www.youtube.com/watch?v=jfobiCq0YUc",
+	"https://www.youtube.com/watch?v=i0Q7T_9vNNE",
+	"https://www.youtube.com/watch?v=r_0JjYUe5jo",
 ];
 
 const info = names.map((_, index) => {
@@ -43,6 +44,13 @@ export default function runFrame3() {
 	const skillIcon = document.querySelector("#descriptionContainer #skillIcon");
 	const skillName = document.querySelector("#descriptionContainer #skillName");
 	const skillDescription = document.querySelector("#descriptionContainer #skillDescription");
+
+	const playVideoButtonFrame3s = document.querySelectorAll(".playVideoButtonFrame3");
+	playVideoButtonFrame3s.forEach((button, index) => {
+		button.onclick = () => {
+			fancyboxVideo(info[index].youtubeLink);
+		};
+	});
 
 	// mobile
 	const skillSwiperMobile = new Swiper(".skill-swiper-mobile", {

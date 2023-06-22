@@ -1,18 +1,10 @@
 export function fancyboxVideo(url) {
 	$.fancybox.open({
 		src: url,
+
 		opts: {
-			arrows: false,
-			infobar: false,
-			modal: false,
-			buttons: [],
-			transitionEffect: "zoom-in-out",
-			transitionDuration: 1000,
 			baseTpl:
 				`<div class="fancybox-container fancybox-video-container" role="dialog" tabindex="-1">` + `<div class="fancybox-stage"></div>` + `</div>`,
-			clickContent: function (current, event) {
-				return "close";
-			},
 			video: {
 				tpl:
 					`<div>` +
@@ -24,7 +16,13 @@ export function fancyboxVideo(url) {
 					`</div>`,
 				autoStart: true,
 			},
-			afterLoad: function (instance, slide) {
+			iframe: {
+				tpl: '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe><button id="popupCloseButton"></button>',
+			},
+			clickContent: function (current, event) {
+				return false;
+			},
+			afterLoad: function (instance, current) {
 				const popupCloseButton = document.getElementById("popupCloseButton");
 				popupCloseButton.onclick = () => {
 					instance.close();
@@ -34,21 +32,23 @@ export function fancyboxVideo(url) {
 	});
 }
 
-export function scaleRootFancybox() {
-	const target = document.querySelector(".fancybox-container");
-	if (target) {
-		// check on every trigger
-		const mode = window.innerWidth <= 768 ? "mobile" : "pc";
-		const width = target.offsetWidth;
-		const height = target.offsetHeight;
-		const ratio = width / height;
+// export function fancyboxObject(cssSelector, options) {
+// 	$.fancybox.open({
+// 		src: cssSelector,
+// 		type: "inline",
+// 		opts: {
+// 			smallBtn: false,
+// 			baseTpl:
+// 				`<div class="fancybox-container fancybox-object-container" role="dialog" tabindex="-1">` + `<div class="fancybox-stage"></div>` + `</div>`,
 
-		const desiredWidth = window.innerWidth;
-		const desiredHeight = desiredWidth / ratio;
-
-		const ratioW = desiredWidth / width;
-		const ratioH = desiredHeight / height;
-
-		target.style.transform = `scale(${ratioW}, ${ratioH})`;
-	}
-}
+// 			clickSlide: function (current, event) {
+// 				// console.log(event);
+// 				return false;
+// 			},
+// 			clickContent: function (current, event) {
+// 				console.log(event);
+// 			},
+// 			...options,
+// 		},
+// 	});
+// }

@@ -14,6 +14,7 @@ import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
 
 // import "animate.css"; // save for later
+// import "@fancyapps/fancybox/dist/jquery.fancybox.min.css";
 
 import Swiper, { Pagination, Navigation } from "swiper";
 import { scaleRootFancybox } from "./fancybox-utils";
@@ -63,3 +64,7 @@ function scaleRoot() {
 
 window.addEventListener("load", scaleRoot);
 window.addEventListener("resize", scaleRoot);
+
+// window.addEventListener("click", (e) => {
+// 	console.log(e);
+// });
