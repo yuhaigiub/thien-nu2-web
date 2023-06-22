@@ -45,6 +45,15 @@ root.style.transformOrigin = "top left";
 
 let mode, width, height, ratio;
 
+let anyClick = false;
+window.addEventListener("click", (e) => {
+	if (!anyClick) {
+		const musicButton = document.getElementById("musicButton");
+		musicButton.click();
+		anyClick = true;
+	}
+});
+
 function scaleRoot() {
 	// check on every trigger
 	mode = window.innerWidth <= 768 ? "mobile" : "pc";
@@ -70,7 +79,3 @@ function scaleRoot() {
 
 window.addEventListener("load", scaleRoot);
 window.addEventListener("resize", scaleRoot);
-
-window.addEventListener("click", (e) => {
-	console.log(e);
-});

@@ -10,7 +10,7 @@
 		<audio id="bgMusicController">
 			<source src="./sound/bgm.mp3" type="audio/mp3" />
 		</audio>
-		<div id="popupBlackScreen" isOpen="true" type="startup">
+		<div id="popupBlackScreen" isOpen="false">
 			<div id="popupScale">
 				<div id="popupContainer">
 					<div id="popupTitle"></div>
@@ -78,10 +78,6 @@
 						</ul>
 					</div>
 				</div>
-				<div id="askForSoundContainer">
-					<button id="playAudio">BẬT ÂM THANH</button>
-					<button id="muteAudio">TẮT ÂM</button>
-				</div>
 				<button id="popupCloseButton"></button>
 			</div>
 		</div>
@@ -105,7 +101,7 @@
 							<a id="groupButton" href="https://vnggames.com/" target="_blank">
 								<img src="images/main_menu_group.png" />
 							</a>
-							<button id="musicButton" status="on">
+							<button id="musicButton" status="off">
 								<img src="images/main_menu_music.png" />
 							</button>
 						</nav>
@@ -123,7 +119,7 @@
 							<button id="fbButtonMobile" />
 							<button id="groupButtonMobile" />
 						</div>
-						<button id="musicButtonMobile" status="on"></button>
+						<button id="musicButtonMobile" status="off"></button>
 					</header>
 					<div id="titleContainer">
 						<button id="playButton"></button>

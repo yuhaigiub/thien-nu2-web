@@ -45,6 +45,13 @@
 	transition: scale 200ms ease-in;
 }
 
+#musicButton[status="on"] {
+	opacity: 1;
+}
+#musicButton[status="off"] {
+	opacity: 0.5;
+}
+
 /**/
 
 #titleContainer {
