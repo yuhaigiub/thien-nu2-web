@@ -30,7 +30,7 @@
 	align-items: flex-start;
 }
 
-#popupCloseButton {
+.fancybox-content #popupCloseButton {
 	justify-self: start;
 	background-image: url("../assets/popup/popup_close_button.png");
 	background-size: 100% 100%;

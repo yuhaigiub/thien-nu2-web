@@ -1,5 +1,5 @@
 import { fancyboxVideo } from "./fancybox-utils";
-
+import { togglePopup, setPopupTitle, setPopupContent } from "./popup";
 export const progressLineProcess = (fallback, mutationList, observer) => {
 	let numberOfUser;
 	try {
@@ -55,11 +55,23 @@ export default function runFrame1() {
 	const henUocButton = document.getElementById("henUocButton");
 	const henUocButtonMobile = document.getElementById("henUocButtonMobile");
 	const theLeButton = document.getElementById("theLeButton");
-	henUocButton.onclick = () => {};
+	henUocButton.onclick = () => {
+		togglePopup(true);
+		setPopupTitle("dang_ky_hen_uoc");
+		setPopupContent("dang_ky_hen_uoc");
+	};
 
-	henUocButtonMobile.onclick = () => {};
+	henUocButtonMobile.onclick = () => {
+		togglePopup(true);
+		setPopupTitle("dang_ky_hen_uoc");
+		setPopupContent("dang_ky_hen_uoc");
+	};
 
-	theLeButton.onclick = () => {};
+	theLeButton.onclick = () => {
+		togglePopup(true);
+		setPopupTitle("the_le");
+		setPopupContent("the_le");
+	};
 
 	// observer (on number of user change)
 
