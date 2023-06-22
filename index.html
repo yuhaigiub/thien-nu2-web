@@ -7,7 +7,10 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 	</head>
 	<body>
-		<div id="popupBlackScreen" isOpen="false">
+		<audio id="bgMusicController">
+			<source src="./sound/bgm.mp3" type="audio/mp3" />
+		</audio>
+		<div id="popupBlackScreen" isOpen="true" type="startup">
 			<div id="popupScale">
 				<div id="popupContainer">
 					<div id="popupTitle"></div>
@@ -75,7 +78,10 @@
 						</ul>
 					</div>
 				</div>
-
+				<div id="askForSoundContainer">
+					<button id="playAudio">BẬT ÂM THANH</button>
+					<button id="muteAudio">TẮT ÂM</button>
+				</div>
 				<button id="popupCloseButton"></button>
 			</div>
 		</div>
@@ -99,9 +105,9 @@
 							<a id="groupButton" href="https://vnggames.com/" target="_blank">
 								<img src="images/main_menu_group.png" />
 							</a>
-							<a id="musicButton" href="https://vnggames.com/" target="_blank">
+							<button id="musicButton" status="on">
 								<img src="images/main_menu_music.png" />
-							</a>
+							</button>
 						</nav>
 					</header>
 					<header id="headerMobile">

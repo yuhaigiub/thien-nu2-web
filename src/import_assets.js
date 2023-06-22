@@ -84,6 +84,9 @@ import "./assets/monphai/monphai_title.png";
 import "./assets/kynang/kynang_title.png";
 import "./assets/maychu/maychu_title.png";
 
+//audio
+import "./assets/sound/bgm.mp3";
+
 export const mainAssets = {
 	plus18Img,
 	homeButtonImg,

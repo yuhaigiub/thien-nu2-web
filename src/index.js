@@ -12,6 +12,7 @@ import runFrame2 from "./frame2";
 import runFrame3 from "./frame3";
 import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
+import onStartUp from "./startup";
 
 import "lazysizes";
 import "lazysizes/plugins/unveilhooks/ls.unveilhooks";
@@ -30,6 +31,7 @@ require("@fancyapps/fancybox");
 
 // ------------------------------------------------------------------------
 
+onStartUp();
 runFrame1();
 runFrame2();
 runFrame3();

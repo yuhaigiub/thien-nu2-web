@@ -45,6 +45,13 @@ module.exports = {
 					filename: "videos/[name][ext]",
 				},
 			},
+			{
+				test: /\.(mp3|wav)$/,
+				type: "asset/resource",
+				generator: {
+					filename: "sound/[name][ext]",
+				},
+			},
 		],
 	},
 };

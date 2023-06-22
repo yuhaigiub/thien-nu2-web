@@ -83,11 +83,4 @@ export default function runFrame1() {
 		progressLineProcess(numberOfUser, mutationList, observer);
 	});
 	observer.observe(target, { attributes: true, childList: true, characterData: true });
-
-	// music button mobile
-	const musicButtonMobile = document.getElementById("musicButtonMobile");
-	musicButtonMobile.onclick = () => {
-		const current = musicButtonMobile.getAttribute("status");
-		musicButtonMobile.setAttribute("status", current === "on" ? "off" : "on");
-	};
 }
