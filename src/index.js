@@ -45,14 +45,15 @@ root.style.transformOrigin = "top left";
 
 let mode, width, height, ratio;
 
-let anyClick = false;
-window.addEventListener("click", (e) => {
-	if (!anyClick) {
-		const musicButton = document.getElementById("musicButton");
-		musicButton.click();
-		anyClick = true;
-	}
-});
+function trackFirstAction(e) {
+	const musicButton = document.getElementById("musicButton");
+	musicButton.click();
+	window.removeEventListener("keypress", trackFirstAction);
+	window.removeEventListener("click", trackFirstAction);
+}
+
+window.addEventListener("click", trackFirstAction);
+window.addEventListener("keypress", trackFirstAction);
 
 function scaleRoot() {
 	// check on every trigger
