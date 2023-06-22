@@ -12,11 +12,11 @@ import runFrame2 from "./frame2";
 import runFrame3 from "./frame3";
 import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
-import fancyBoxInit from "./fancybox-init";
 
 // import "animate.css"; // save for later
 
 import Swiper, { Pagination, Navigation } from "swiper";
+import { scaleRootFancybox } from "./fancybox-utils";
 Swiper.use([Pagination, Navigation]);
 
 // jquery and fancybox
@@ -32,7 +32,6 @@ runFrame2();
 runFrame3();
 runFrame4();
 runFrame5();
-fancyBoxInit();
 
 const outerRoot = document.getElementById("outerRoot");
 const root = document.getElementById("root");
@@ -55,8 +54,6 @@ function scaleRoot() {
 
 	const ratioW = desiredWidth / width;
 	const ratioH = desiredHeight / height;
-
-	console.log(window.innerWidth, width, ratioW);
 
 	outerRoot.style.width = `${desiredWidth}px`;
 	outerRoot.style.height = `${desiredHeight}px`;

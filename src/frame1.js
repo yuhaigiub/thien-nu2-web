@@ -1,3 +1,5 @@
+import { fancyboxVideo } from "./fancybox-utils";
+
 export const progressLineProcess = (fallback, mutationList, observer) => {
 	let numberOfUser;
 	try {
@@ -45,7 +47,9 @@ export default function runFrame1() {
 	let numberOfUser = parseInt(target.innerText.replace(".", ""));
 
 	const playVideoButton = document.getElementById("playButton");
-	playVideoButton.onclick = () => {};
+	playVideoButton.onclick = () => {
+		fancyboxVideo("./videos/main.mp4");
+	};
 
 	// open popup
 	const henUocButton = document.getElementById("henUocButton");

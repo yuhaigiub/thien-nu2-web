@@ -3,19 +3,56 @@
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(0 0 0 0.5);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	transform-origin: top left;
 }
 
 .fancybox-stage {
-	width: 500px;
-	height: fit-content;
-	background-color: red;
-	overflow: hidden;
+	width: 56.25vw;
+	aspect-ratio: 963/541;
+}
+
+.fancybox-content {
+	width: 100% !important;
+	height: 100% !important;
+	display: grid;
+	grid-template-columns: 9fr 1fr;
+	gap: 0.5vw;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+#popupCloseButton {
+	justify-self: start;
+	flex-shrink: 0;
+	background-image: url("../assets/popup/popup_close_button.png");
+	background-size: 100% 100%;
+	width: 50%;
+	aspect-ratio: 1/1;
 }
 
 .fancybox-stage video {
-	width: 500px;
+	flex-shrink: 0;
+	width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width: 768px) {
+	.fancybox-stage {
+		width: 100vw;
+	}
+
+	.fancybox-content {
+		display: flex;
+		gap: 2vw;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#popupCloseButton {
+		width: 10%;
+	}
 }

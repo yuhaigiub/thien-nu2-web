@@ -49,13 +49,6 @@
 	background-image: url("../assets/popup/popup_bg.png");
 }
 
-#popupCloseButton {
-	background-image: url("../assets/popup/popup_close_button.png");
-	width: 51px;
-	height: 52px;
-	margin-left: 16px;
-}
-
 /**/
 
 #popupTitle {
@@ -245,12 +238,5 @@
 	#popupVideoContainer,
 	#popupYoutubeContainer {
 		height: fit-content;
-	}
-
-	#popupCloseButton {
-		bottom: -60px;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
 	}
 }

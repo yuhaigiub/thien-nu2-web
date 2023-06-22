@@ -1,3 +1,5 @@
+import { fancyboxVideo } from "./fancybox-utils";
+
 const maleHTML = `<h3 id="monphaiTitle">NAM ĐIỆP KHÁCH: MỊCH KHANH</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur expedita similique voluptates illum odit.</p>`;
 const femaleHTML = `<h3 id="monphaiTitle">NỮ ĐIỆP KHÁCH: MỊCH KHANH</h3><p>Là một người yêu hoa và cái đẹp, đấu tranh hết mình để giúp tộc Bạch Điệp hóa giải lời nguyền của Thần Vu.</p>`;
 
@@ -12,7 +14,9 @@ export default function runFrame2() {
 	textBox.innerHTML = isMale ? maleHTML : femaleHTML;
 
 	const playVideoButton = document.getElementById("playVideoButtonFrame2");
-	playVideoButton.onclick = () => {};
+	playVideoButton.onclick = () => {
+		fancyboxVideo(isMale ? "./videos/male.mp4" : "./videos/female.mp4");
+	};
 
 	// swap character button
 	const swapCharacterButton = document.getElementById("swapCharacterButton");
