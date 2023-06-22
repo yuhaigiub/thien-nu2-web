@@ -7,6 +7,92 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 	</head>
 	<body>
+		<div id="popupBlackScreen" isOpen="false">
+			<div id="popupScale">
+				<div id="popupContainer">
+					<div id="popupTitle"></div>
+					<!--different types of popups that uses popupBg-->
+					<div id="popupSignUp" class="popupContent">
+						<button id="currentServer"></button>
+						<button id="newServer"></button>
+					</div>
+					<form id="popupInfo1" class="popupContent">
+						<div>
+							<label>ID Nhân vật: </label>
+							<input />
+						</div>
+						<div>
+							<label>Email: </label>
+							<input />
+						</div>
+						<div>
+							<label>Số điện thoại: </label>
+							<input />
+						</div>
+						<button>Xác nhận</button>
+					</form>
+					<form id="popupInfo2" class="popupContent">
+						<div>
+							<label>Số điện thoại: </label>
+							<input />
+						</div>
+						<div>
+							<label>Email: </label>
+							<input />
+						</div>
+						<button>Xác nhận</button>
+					</form>
+					<div id="popupRule" class="popupContent">
+						<p class="title">Thời gian hoạt động:</p>
+						<p class="tab">Hoạt động Hẹn Ước Siêu Phiên Bản - Phù Sinh Mộng sẽ được diễn ra đến hết ngày 25/10/2021.</p>
+						<p class="title">Nội dung hoạt động:</p>
+						<p class="tab">
+							Trong thời gian diễn ra hoạt động, tất cả các nhân vật tại Thiện Nữ 2 sẽ được tham gia Hẹn Ước Siêu Phiên Bản - Phù Sinh Mộng.
+						</p>
+						<p class="tab">Tất cả những nhân vật tham gia Hẹn Ước sẽ nhận được phần thưởng: theo các móc hẹn ước đạt được.</p>
+						<p class="tab">
+							Đối với các tài khoản tham gia Hẹn Ước tại Máy Chủ Đặc Biệt - S70 | Vu Dạ Cẩm sẽ được nhận thêm phần quà bao gồm: 5 Chìa Bảo Rương + 3
+							Dùi Kim Cương Cấp 1 + 1 May Mắn Đơn
+						</p>
+						<p class="title">Chi tiết phần thưởng:</p>
+						<ul>
+							<li>Hẹn ước đạt móc: 3.000 sẽ nhận được: Thú Cưỡi - Đăng Hoa Kết (3 ngày) + 200 Tịnh Bình.</li>
+							<li>Hẹn ước đạt móc: 5.000 sẽ nhận được thêm: 500 Vàng.</li>
+							<li>Hẹn ước đạt móc: 10.000 sẽ nhận được thêm: 20 Vạn Ngân Phiếu + 500 Vàng.</li>
+							<li>Hẹn ước đạt móc: 15.000 sẽ nhận được thêm: 20 Võ Dương Lệnh</li>
+							<li>Hẹn ước đạt móc: 15.000 sẽ nhận được thêm: 300 Tịnh Bình</li>
+						</ul>
+						<p>Phần thưởng sẽ được trao cho tất cả những nhân vật tham gia đăng ký hẹn ước vào ngày 04/11/2021.</p>
+						<p>Đối với các nhân vật Đăng Ký Hẹn Ước tại Máy Chủ S70 - Vu Dạ Cẩm sẽ nhận được thêm Combo Hỗ Trợ Máy Chủ Mới bao gồm:</p>
+						<ul>
+							<li>5 Chìa Bảo Rương + 3 Dùi Kim Cương Cấp 1 + 1 May Mắn Đơn</li>
+						</ul>
+						<p class="title">Lưu ý:</p>
+						<ul>
+							<li>Combo Hỗ Trợ Máy Chủ Mới chỉ áp dụng tại máy chủ S70 - Vu Dạ Cẩm.</li>
+							<li>Nhân vật cần tiến hành xác nhận thông tin đã đăng ký hẹn ước và cung cấp ID nhân vật để có thể nhận được phần thưởng.</li>
+							<li>Phần thưởng Hẹn Ước của máy chủ S70 - Vu Dạ Cẩm sẽ được trao vào ngày 07/10/2021.</li>
+						</ul>
+					</div>
+				</div>
+				<div id="popupVideoContainer">
+					<!--different types of popups that DON'T uses popupContainer-->
+					<video id="popupVideoMain" class="popupVideo" controls>
+						<source type="video/mp4" src="./videos/main.mp4" />
+					</video>
+					<video id="popupVideoMale" class="popupVideo" controls>
+						<source type="video/mp4" src="./videos/male.mp4" />
+					</video>
+					<video id="popupVideoFemale" class="popupVideo" controls>
+						<source type="video/mp4" src="./videos/female.mp4" />
+					</video>
+				</div>
+				<div id="popupYoutubeContainer">
+					<iframe title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<button id="popupCloseButton"></button>
+			</div>
+		</div>
 		<div id="outerRoot">
 			<div id="root">
 				<div id="container1" class="containerType">
