@@ -4,6 +4,7 @@ export default function onStartUp() {
 	const musicButtonMobile = document.getElementById("musicButtonMobile");
 
 	musicController.volume = 0.2;
+	musicController.loop = true;
 
 	// music button mobile
 	musicButtonMobile.onclick = () => {
