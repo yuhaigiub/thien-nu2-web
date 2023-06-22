@@ -1,7 +1,5 @@
 import { fancyboxVideo } from "./fancybox-utils";
 import { kynangAssets } from "./import_assets";
-import { togglePopup } from "./popup";
-import { setYoutube } from "./videos";
 import Swiper from "swiper";
 
 const books = kynangAssets.books;
@@ -44,9 +42,17 @@ export default function runFrame3() {
 	const skillIcon = document.querySelector("#descriptionContainer #skillIcon");
 	const skillName = document.querySelector("#descriptionContainer #skillName");
 	const skillDescription = document.querySelector("#descriptionContainer #skillDescription");
+	const book = document.querySelector("#skillContainer .book");
 
 	const playVideoButtonFrame3s = document.querySelectorAll(".playVideoButtonFrame3");
 	playVideoButtonFrame3s.forEach((button, index) => {
+		button.onclick = () => {
+			fancyboxVideo(info[index].youtubeLink);
+		};
+	});
+
+	const playVideoButtonFrame3Mobiles = document.querySelectorAll(".playVideoButtonFrame3Mobile");
+	playVideoButtonFrame3Mobiles.forEach((button, index) => {
 		button.onclick = () => {
 			fancyboxVideo(info[index].youtubeLink);
 		};
@@ -85,12 +91,14 @@ export default function runFrame3() {
 				skillIcon.src = info[index].icon;
 				skillName.innerText = info[index].skillName;
 				skillDescription.innerText = info[index].description;
+				book.src = info[index].book;
 			},
 			activeIndexChange: function (swiper) {
 				const index = swiper.activeIndex;
 				skillIcon.src = info[index].icon;
 				skillName.innerText = info[index].skillName;
 				skillDescription.innerText = info[index].description;
+				book.src = info[index].book;
 			},
 		},
 	});

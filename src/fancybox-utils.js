@@ -12,19 +12,19 @@ export function fancyboxVideo(url) {
 					'<source src="{{src}}" type="{{format}}" />' +
 					'Sorry, your browser doesn\'t support embedded videos, <a href="{{src}}">download</a> and watch with your favorite video player!' +
 					"</video>" +
-					'<button id="popupCloseButton"></button>' +
+					'<button id="popupCloseButtonFancybox"></button>' +
 					`</div>`,
 				autoStart: true,
 			},
 			iframe: {
-				tpl: '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe><button id="popupCloseButton"></button>',
+				tpl: '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe><button id="popupCloseButtonFancybox"></button>',
 			},
 			clickContent: function (current, event) {
 				return false;
 			},
 			afterLoad: function (instance, current) {
-				const popupCloseButton = document.getElementById("popupCloseButton");
-				popupCloseButton.onclick = () => {
+				const popupCloseButtonFancybox = document.getElementById("popupCloseButtonFancybox");
+				popupCloseButtonFancybox.onclick = () => {
 					instance.close();
 				};
 			},
