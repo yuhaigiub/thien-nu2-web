@@ -69,6 +69,10 @@
 	background-image: url("../assets/main/main_play_video_button.png");
 }
 
+#playButton:hover {
+	transform: translateY(-50%) scale(1.1);
+}
+
 /**/
 
 #progressContainer {

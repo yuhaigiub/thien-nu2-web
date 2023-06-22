@@ -49,17 +49,23 @@ import option3 from "./assets/nangcap/nangcap_gia_vien_ky_ao.jpg";
 import option4 from "./assets/nangcap/nangcap_thay_doi_dien_mao.jpg";
 import option5 from "./assets/nangcap/nangcap_nang_cap_tien_ich.jpg";
 
-import option1Mobile from "./assets/nangcap/nangcap_nang_cap_suc_manh_mobile.jpg";
-import option2Mobile from "./assets/nangcap/nangcap_nang_cap_cua_hang_mobile.jpg";
-import option3Mobile from "./assets/nangcap/nangcap_gia_vien_ky_ao_mobile.jpg";
-import option4Mobile from "./assets/nangcap/nangcap_thay_doi_dien_mao_mobile.jpg";
-import option5Mobile from "./assets/nangcap/nangcap_nang_cap_tien_ich_mobile.jpg";
+import "./assets/nangcap/nangcap_nang_cap_suc_manh_mobile.jpg";
+import "./assets/nangcap/nangcap_nang_cap_cua_hang_mobile.jpg";
+import "./assets/nangcap/nangcap_gia_vien_ky_ao_mobile.jpg";
+import "./assets/nangcap/nangcap_thay_doi_dien_mao_mobile.jpg";
+import "./assets/nangcap/nangcap_nang_cap_tien_ich_mobile.jpg";
 
 import text1 from "./assets/nangcap/nangcap_nang_cap_suc_manh_text.png";
 import text2 from "./assets/nangcap/nangcap_nang_cap_cua_hang_text.png";
 import text3 from "./assets/nangcap/nangcap_gia_vien_ky_ao_text.png";
 import text4 from "./assets/nangcap/nangcap_thay_doi_dien_mao_text.png";
 import text5 from "./assets/nangcap/nangcap_nang_cap_tien_ich_text.png";
+
+import "./assets/nangcap/nangcap_button_bg_1.jpg";
+import "./assets/nangcap/nangcap_button_bg_2.jpg";
+import "./assets/nangcap/nangcap_button_bg_3.jpg";
+import "./assets/nangcap/nangcap_button_bg_4.jpg";
+import "./assets/nangcap/nangcap_button_bg_5.jpg";
 
 // videos
 import maleVideo from "./assets/videos/male.mp4";
@@ -68,6 +74,15 @@ import mainVideo from "./assets/videos/main.mp4";
 
 // headerMobile
 import appIcon from "./assets/main/main_app_icon.png";
+
+//frame5
+import "./assets/maychu/maychu_cta_button.png";
+import "./assets/maychu/may_chu_cta_icon.png";
+
+//titles
+import "./assets/monphai/monphai_title.png";
+import "./assets/kynang/kynang_title.png";
+import "./assets/maychu/maychu_title.png";
 
 export const mainAssets = {
 	plus18Img,

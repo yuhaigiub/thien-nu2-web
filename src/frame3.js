@@ -1,6 +1,7 @@
 import { fancyboxVideo } from "./fancybox-utils";
 import { kynangAssets } from "./import_assets";
 import Swiper from "swiper";
+import SwiperAnimation from "@cycjimmy/swiper-animation";
 
 const books = kynangAssets.books;
 const ingames = kynangAssets.ingames;
@@ -58,6 +59,7 @@ export default function runFrame3() {
 		};
 	});
 
+	const swiperAnimation = new SwiperAnimation();
 	// mobile
 	const skillSwiperMobile = new Swiper(".skill-swiper-mobile", {
 		slidesPerView: 1,
@@ -67,7 +69,7 @@ export default function runFrame3() {
 		grabCursor: true,
 		navigation: {
 			nextEl: ".skill-swiper-mobile .swiper-button-next",
-			prevEl: "skill-swiper-mobile .swiper-button-prev",
+			prevEl: ".skill-swiper-mobile .swiper-button-prev",
 		},
 		pagination: {
 			el: "skill-swiper-mobile .swiper-pagination",
@@ -93,6 +95,12 @@ export default function runFrame3() {
 				skillDescription.innerText = info[index].description;
 				book.src = info[index].book;
 			},
+
+			slideChange: function (swiper) {
+				console.log("activate");
+				swiperAnimation.init(this).animate();
+			},
+
 			activeIndexChange: function (swiper) {
 				const index = swiper.activeIndex;
 				skillIcon.src = info[index].icon;

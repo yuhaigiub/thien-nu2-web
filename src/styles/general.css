@@ -45,6 +45,11 @@ button {
 	padding: 0;
 }
 
+button:hover,
+a:hover {
+	transform: scale(1.1);
+}
+
 @media screen and (max-width: 768px) {
 	#root {
 		width: 768px;

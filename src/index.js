@@ -13,11 +13,13 @@ import runFrame3 from "./frame3";
 import runFrame4 from "./frame4";
 import runFrame5 from "./frame5";
 
-// import "animate.css"; // save for later
+import "lazysizes";
+import "lazysizes/plugins/unveilhooks/ls.unveilhooks";
+import "animate.css";
+
 // import "@fancyapps/fancybox/dist/jquery.fancybox.min.css";
 
 import Swiper, { Pagination, Navigation } from "swiper";
-import { scaleRootFancybox } from "./fancybox-utils";
 Swiper.use([Pagination, Navigation]);
 
 // jquery and fancybox
@@ -67,6 +69,6 @@ function scaleRoot() {
 window.addEventListener("load", scaleRoot);
 window.addEventListener("resize", scaleRoot);
 
-// window.addEventListener("click", (e) => {
-// 	console.log(e);
-// });
+window.addEventListener("click", (e) => {
+	console.log(e);
+});

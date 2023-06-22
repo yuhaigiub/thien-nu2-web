@@ -4,10 +4,10 @@
 }
 
 #container5 > .title {
-	background-image: url("../assets/maychu/maychu_title.png");
 	width: 942px;
 	height: 163px;
 	margin-top: 150px;
+	background-size: 100% 100%;
 }
 
 #characterDecorate {
@@ -35,7 +35,6 @@
 #ctaButton {
 	width: 304px;
 	height: 278px;
-	background-image: url("../assets/maychu/maychu_cta_button.png");
 	position: absolute;
 	right: 160px;
 	top: 300px;

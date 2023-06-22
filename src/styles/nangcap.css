@@ -32,7 +32,6 @@
 .optionTextDecor {
 	width: 918px;
 	height: 803px;
-	background-image: url("../assets/nangcap/nangcap_text_decor.png");
 	position: absolute;
 	right: -50px;
 	top: -50px;
@@ -92,26 +91,6 @@
 	background-image: url("../assets/nangcap/nangcap_button_decor.png");
 	position: absolute;
 	left: -52px;
-}
-
-#button0 {
-	background-image: url("../assets/nangcap/nangcap_button_bg_1.jpg");
-}
-
-#button1 {
-	background-image: url("../assets/nangcap/nangcap_button_bg_2.jpg");
-}
-
-#button2 {
-	background-image: url("../assets/nangcap/nangcap_button_bg_3.jpg");
-}
-
-#button3 {
-	background-image: url("../assets/nangcap/nangcap_button_bg_4.jpg");
-}
-
-#button4 {
-	background-image: url("../assets/nangcap/nangcap_button_bg_5.jpg");
 }
 
 /*swiper*/

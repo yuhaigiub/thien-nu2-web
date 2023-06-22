@@ -21,9 +21,11 @@
 		"webpack-dev-server": "^4.15.1"
 	},
 	"dependencies": {
+		"@cycjimmy/swiper-animation": "^6.0.2",
 		"@fancyapps/fancybox": "^3.5.7",
 		"animate.css": "^4.1.1",
 		"jquery": "^3.7.0",
+		"lazysizes": "^5.3.2",
 		"swiper": "^9.4.1"
 	}
 }
