@@ -129,5 +129,45 @@
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
+#popupBlackScreen {
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+#popupBlackScreen[isOpen="true"] {
+	opacity: 1 !important;
+	pointer-events: all !important;
+}
+#popupBlackScreen[isOpen="false"] {
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+#popupBlackScreen[type="non-video"] #popupContainer {
+	display: block !important;
+	pointer-events: all;
+}
+
+#popupBlackScreen[type="video"] #popupVideoContainer {
+	display: block !important;
+	pointer-events: all;
+}
+
+#popupBlackScreen[type="youtube"] #popupYoutubeContainer {
+	display: block !important;
+	pointer-events: all;
+}
+
+#popupScale {
+	display: flex;
+}
+
 @media screen and (max-width: 768px) {
 }
