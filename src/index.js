@@ -51,9 +51,6 @@ function scaleRoot() {
 	width = root.offsetWidth;
 	height = root.offsetHeight;
 	ratio = width / height;
-	const target = document.querySelector("#announcement span");
-	const numberOfUser = parseInt(target.innerText.replace(".", ""));
-	progressLineProcess(numberOfUser);
 
 	const desiredWidth = window.innerWidth;
 	const desiredHeight = desiredWidth / ratio;
@@ -66,6 +63,10 @@ function scaleRoot() {
 
 	root.style.transform = `scale(${ratioW}, ${ratioH})`;
 	popupScale.style.transform = `scale(${ratioW}, ${ratioH})`;
+
+	const target = document.querySelector("#announcement span");
+	const numberOfUser = parseInt(target.innerText.replace(".", ""));
+	progressLineProcess(numberOfUser);
 }
 
 window.addEventListener("load", scaleRoot);

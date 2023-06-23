@@ -13,43 +13,29 @@ export const progressLineProcess = (fallback, mutationList, observer) => {
 
 	const maxWidth = document.getElementById("progressLine").offsetWidth;
 
-	//
-	const checkpointValues = [0, 3000, 5000, 10000, 15000];
-	const checkpoints = [0, maxWidth * 0.2, maxWidth * 0.4, maxWidth * 0.6, maxWidth * 0.8];
+	// half width
+	const itemWidth = document.querySelector(".progressItem").offsetWidth / 2;
+
 	let desiredWidth = 0;
+	const checkpointValues = [0, 3000, 5000, 10000, 15000, 18000];
+	const checkpoints = [0, maxWidth * 0.2, maxWidth * 0.4, maxWidth * 0.6, maxWidth * 0.8];
 	const n = checkpointValues.length;
 
-	// if (numberOfUser <= 3000) {
-	// 	desiredWidth = 0 + (numberOfUser / 3000) * (checkpoints[0] - 0);
-	// 	// console.log(`checkpoint0 ${desiredWidth}`);
-	// } else if (numberOfUser <= 5000) {
-	// 	desiredWidth = checkpoints[0] + ((numberOfUser - 3000) / (5000 - 3000)) * (checkpoints[1] - checkpoints[0]);
-	// 	// console.log(`checkpoint1 ${desiredWidth}`);
-	// } else if (numberOfUser <= 10000) {
-	// 	desiredWidth = checkpoints[1] + ((numberOfUser - 5000) / (10000 - 5000)) * (checkpoints[2] - checkpoints[1]);
-	// } else if (numberOfUser <= 15000) {
-	// 	desiredWidth = checkpoints[2] + ((numberOfUser - 10000) / (15000 - 10000)) * (checkpoints[3] - checkpoints[2]);
-	// 	// console.log(`checkpoint2 ${desiredWidth}`);
-	// } else {
-	// 	desiredWidth = checkpoints[3] + Math.min((numberOfUser - 15000) / 3000, 1) * (checkpoints[4] - checkpoints[3]);
-	// 	// console.log(`checkpoint3 ${desiredWidth}`);
-	// }
+	const intervals = [[checkpoints[0], checkpoints[1] - itemWidth]];
+	for (let i = 1; i < n - 1; i++) {
+		intervals.push([checkpoints[i] + itemWidth, checkpoints[i + 1] - itemWidth]);
+	}
+	intervals.push([checkpoints[n - 1] + itemWidth, maxWidth]);
 
-	for (let i = 1; i < n; i++) {
-		if (numberOfUser <= checkpointValues[i]) {
-			const percent = (numberOfUser - checkpointValues[i - 1]) / (checkpointValues[i] - checkpointValues[i - 1]);
-			desiredWidth = checkpoints[i - 1] + percent * (checkpoints[i] - checkpoints[i - 1]);
+	for (let i = 0; i < n - 1; i++) {
+		if (numberOfUser <= checkpointValues[i + 1]) {
+			const interval = intervals[i];
+			const percent = (numberOfUser - checkpointValues[i]) / (checkpointValues[i + 1] - checkpointValues[i]);
+			desiredWidth = interval[0] + percent * (interval[1] - interval[0]);
 			break;
 		}
 	}
 
-	const upperMaxAmount = 3000;
-	if (numberOfUser > checkpointValues[n - 1]) {
-		const percent = Math.min((numberOfUser - checkpointValues[n - 1]) / upperMaxAmount, 1);
-		desiredWidth = checkpoints[n - 1] + percent * (maxWidth - checkpoints[n - 1]);
-	}
-
-	console.log(desiredWidth);
 	container1.style.setProperty("--width", `${desiredWidth}px`);
 
 	// progressItemUpdate
