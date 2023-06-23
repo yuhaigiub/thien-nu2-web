@@ -4,6 +4,23 @@
 	height: 1106px;
 }
 
+#videoBg {
+	/* Make video to at least 100% wide and tall */
+	min-width: 100%;
+	min-height: 100%;
+
+	/* Setting width & height to auto prevents the browser from stretching or squishing the video */
+	width: auto;
+	height: auto;
+
+	/* Center the video */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
+}
+
 /*Including Menu and 18+ */
 
 #header {
@@ -15,6 +32,7 @@
 /*18+ */
 
 #plus18Container {
+	position: relative;
 	width: 153px;
 	height: 81px;
 }
@@ -43,6 +61,7 @@
 	user-select: none;
 	cursor: pointer;
 	transition: scale 200ms ease-in;
+	position: relative;
 }
 
 #musicButton[status="on"] {
@@ -57,27 +76,26 @@
 #titleContainer {
 	width: 534px;
 	aspect-ratio: 534/686;
-	background-image: url("../assets/main/main_logo.png");
 	position: absolute;
-	left: 15%;
-	top: 50px;
+	left: 11.5%;
+	top: 60px;
 }
 
 #playButton {
 	position: absolute;
 	top: 50%;
 	right: 0;
-	transform: translateY(-50%);
+	translate: 0 -50%;
 	width: auto;
 	height: 120px;
 	aspect-ratio: 113/120;
 	z-index: 1;
 	transition: scale 200ms ease-in;
 	background-image: url("../assets/main/main_play_video_button.png");
-}
-
-#playButton:hover {
-	transform: translateY(-50%) scale(1.1);
+	animation: my_button_pulse_animation;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 }
 
 /**/
@@ -153,21 +171,59 @@
 	transform: translateX(-50%);
 }
 
+@keyframes my_progress_animation {
+	0% {
+		scale: 0 1;
+	}
+	100% {
+		scale: 1 1;
+	}
+}
+
+@keyframes my_butterfly_progress_animation {
+	0% {
+		translate: -100% 0;
+	}
+	100% {
+		left: 0 0;
+	}
+}
+
 #progressLine > #innerProgressLine {
 	background-image: url("../assets/main/main_inner_progress_line_bg.png");
 	background-size: 100% 100%;
 	height: 100%;
+	width: var(--width);
 	border-radius: 8px;
 	position: relative;
+	animation-duration: 3s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	transform-origin: left;
 }
-
-#progressLine > #innerProgressLine::after {
-	content: "";
-	background-image: url("../assets/main/main_butterly_decor.png");
-	width: 54px;
+#progressLine > #butterflyProgressContainer {
 	height: 43px;
+	width: 1200px;
 	position: absolute;
 	top: -50px;
+	overflow: hidden;
+}
+#butterflyProgressContainer > #butterflyProgress {
+	width: var(--width);
+	height: 43px;
+	position: absolute;
+	animation-duration: 3s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	transform-origin: left;
+	background-position: right -20%;
+}
+#butterflyProgressContainer > #butterflyProgress::after {
+	content: "";
+	width: 54px;
+	height: 43px;
+	background-image: url("../assets/main/main_butterly_decor.png");
+	position: absolute;
 	right: -20px;
 }
 
@@ -202,29 +258,11 @@
 }
 
 .progressItem[activate="true"] {
-	animation-name: my-animation;
+	animation-name: my_pulse_animation;
 	animation-duration: 5s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	transform-origin: center;
-}
-
-@keyframes my-animation {
-	0% {
-		transform: scale(1);
-	}
-	25% {
-		transform: scale(1.1);
-	}
-	50% {
-		transform: scale(1);
-	}
-	75% {
-		transform: scale(0.9);
-	}
-	100% {
-		transform: scale(1);
-	}
 }
 
 .progressItem > img {
@@ -283,6 +321,8 @@
 	background-color: black;
 	justify-content: space-between;
 	padding-inline: 17px;
+	position: relative;
+	z-index: 10;
 }
 
 #appIconMobile {
@@ -358,11 +398,16 @@
 		background-position: 50% center;
 	}
 
+	#videoBg {
+		left: 45%;
+	}
+
 	#titleContainer {
 		width: auto;
 		height: 760px;
 		left: -100px;
 		top: 210px;
+		background-image: url("../assets/main/main_logo.png");
 	}
 
 	#playButton {

@@ -71,6 +71,10 @@
 
 #buttonsContainer > button[isActive="true"],
 #buttonContainer > button:hover {
+	animation: my_button_pulse_animation;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 	filter: none;
 }
 

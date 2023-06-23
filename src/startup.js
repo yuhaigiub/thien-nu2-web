@@ -1,5 +1,3 @@
-import { trackFirstAction } from "./index";
-
 export default function onStartUp() {
 	const musicController = document.getElementById("bgMusicController");
 	const musicButton = document.getElementById("musicButton");
@@ -11,18 +9,14 @@ export default function onStartUp() {
 	let firstClick = false;
 
 	function trackFirstAction(e) {
-		console.log("first action tracker");
 		if (e.target.id !== "musicButton" || e.target.id !== "musicButtonMobile") {
 			const musicButton = document.getElementById("musicButton");
 			musicButton.click();
 		}
-
-		window.removeEventListener("keypress", trackFirstAction);
-		window.removeEventListener("click", trackFirstAction);
 	}
 
-	window.addEventListener("click", trackFirstAction);
-	window.addEventListener("keypress", trackFirstAction);
+	window.addEventListener("click", trackFirstAction, { once: true });
+	window.addEventListener("keypress", trackFirstAction, { once: true });
 
 	// music button mobile
 	musicButtonMobile.onclick = (e) => {
@@ -46,7 +40,6 @@ export default function onStartUp() {
 	};
 
 	musicButton.onclick = (e) => {
-		console.log("clicked");
 		const current = musicButton.getAttribute("status");
 		const newState = current === "on" ? "off" : "on";
 

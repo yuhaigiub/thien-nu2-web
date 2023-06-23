@@ -1,6 +1,7 @@
 #container2 {
 	background-image: url("../assets/monphai/monphai_bg.jpg");
 	height: 1317px;
+	z-index: -2;
 }
 
 #container2 > .title {
@@ -16,6 +17,7 @@
 	background-size: 100% 100%;
 	position: absolute;
 	bottom: 0;
+	z-index: -1;
 }
 
 #textBox {
@@ -25,7 +27,7 @@
 	background-size: 100%;
 	position: relative;
 	margin-left: 6rem;
-	z-index: 3;
+	z-index: 10;
 }
 
 #textBox > #playVideoButtonFrame2 {
@@ -37,6 +39,10 @@
 	right: 25%;
 	top: 20%;
 	z-index: 4;
+	animation: my_button_pulse_animation;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 }
 
 #text {
@@ -89,6 +95,7 @@
 	top: 180px;
 	z-index: 3;
 	display: flex;
+	transition: transform 350ms ease-in-out;
 }
 
 #swapCharacterButton[gender="male"] {
@@ -105,9 +112,10 @@
 }
 
 #characterDisplay {
+	--animate-duration: 0.3s;
 	width: 937px;
 	aspect-ratio: 937/832;
-	z-index: 1;
+	z-index: 0;
 	background-color: transparent;
 	background-size: 100% 100%;
 	position: absolute;

@@ -46,7 +46,6 @@
 #skillContainer :is(.swiper-button-next, .swiper-button-prev) {
 	width: 38px;
 	height: 69px;
-	background-image: url("../assets/kynang/kynang_next_button.png");
 	position: absolute;
 	z-index: 10;
 }
@@ -56,12 +55,13 @@
 }
 
 #skillContainer .swiper-button-next {
-	transform: scaleX(-1);
 	right: -150px;
+	background-image: url("../assets/kynang/kynang_next_button.png");
 }
 
 #skillContainer .swiper-button-prev {
 	left: -150px;
+	background-image: url("../assets/kynang/kynang_prev_button.png");
 }
 
 #skillContainer .skill {
@@ -76,6 +76,7 @@
 }
 
 #skillContainer .book {
+	--animate-duration: 0.5s;
 	width: 433px;
 	height: 584px;
 	z-index: 1;
@@ -120,6 +121,10 @@
 	position: absolute;
 	left: calc(50% - 49px / 2);
 	top: 15%;
+	animation: my_button_pulse_animation;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 }
 
 #skillContainer .skillText {
@@ -230,6 +235,10 @@
 	top: 30px;
 	left: 50%;
 	transform: translateX(-50%);
+	animation: my_button_pulse_animation;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 }
 
 #skillContainerMobile .skillTextMobile {

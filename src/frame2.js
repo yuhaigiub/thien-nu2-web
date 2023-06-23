@@ -1,3 +1,4 @@
+import { animateCSS } from "./utils";
 import { fancyboxVideo } from "./fancybox-utils";
 
 const maleHTML = `<h3 id="monphaiTitle">NAM ĐIỆP KHÁCH: MỊCH KHANH</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur expedita similique voluptates illum odit.</p>`;
@@ -33,10 +34,16 @@ export default function runFrame2() {
 	};
 
 	maleButton.onclick = () => {
-		isMale = true;
+		if (isMale) {
+			return;
+		}
 		swapCharacterButton.setAttribute("gender", "male");
-		characterDisplay.setAttribute("gender", "male");
-		textBox.innerHTML = isMale ? maleHTML : femaleHTML;
+		animateCSS(characterDisplay, "animate__fadeOutDown").then(() => {
+			isMale = true;
+			characterDisplay.setAttribute("gender", "male");
+			textBox.innerHTML = isMale ? maleHTML : femaleHTML;
+			animateCSS(characterDisplay, "animate__zoomIn");
+		});
 	};
 
 	femaleButton.onmouseenter = () => {
@@ -44,9 +51,15 @@ export default function runFrame2() {
 	};
 
 	femaleButton.onclick = () => {
-		isMale = false;
+		if (!isMale) {
+			return;
+		}
 		swapCharacterButton.setAttribute("gender", "female");
-		characterDisplay.setAttribute("gender", "female");
-		textBox.innerHTML = isMale ? maleHTML : femaleHTML;
+		animateCSS(characterDisplay, "animate__fadeOutDown").then(() => {
+			isMale = false;
+			characterDisplay.setAttribute("gender", "female");
+			textBox.innerHTML = isMale ? maleHTML : femaleHTML;
+			animateCSS(characterDisplay, "animate__zoomIn");
+		});
 	};
 }

@@ -84,6 +84,9 @@
 		<div id="outerRoot">
 			<div id="root">
 				<div id="container1" class="containerType">
+					<video id="videoBg" autoplay muted loop>
+						<source src="./videos/main.mp4" />
+					</video>
 					<header id="header">
 						<div id="plus18Container">
 							<img src="images/main_18t.jpg" />
@@ -125,7 +128,7 @@
 						<button id="playButton"></button>
 					</div>
 					<div id="progressContainer">
-						<div id="announcement"><div>Đã có&nbsp<span>15.000</span>&nbspngười hẹn ước</div></div>
+						<div id="announcement"><div>Đã có&nbsp<span>12.000</span>&nbspngười hẹn ước</div></div>
 						<p>Cùng nhau hẹn ước - cùng nhau nhận quà free</p>
 						<div id="progress">
 							<div class="progressItemContainer">
@@ -156,7 +159,12 @@
 								<div class="number">15.000</div>
 								Hẹn ước
 							</div>
-							<div id="progressLine"><div id="innerProgressLine"></div></div>
+							<div id="progressLine">
+								<div id="innerProgressLine"></div>
+								<div id="butterflyProgressContainer">
+									<div id="butterflyProgress"></div>
+								</div>
+							</div>
 						</div>
 						<div id="progressButtonContainer"><button id="henUocButton">Hẹn ước</button> <button id="theLeButton">Thể lệ</button></div>
 						<button id="henUocButtonMobile"></button>
@@ -164,8 +172,9 @@
 				</div>
 				<div id="container2" class="containerType">
 					<div class="title lazyload" data-bg="./images/monphai_title.png"></div>
-					<div id="characterDisplay"></div>
 					<div id="characterBg">
+						<div id="characterDisplay"></div>
+
 						<div id="decor"></div>
 						<div id="textBox">
 							<button id="playVideoButtonFrame2"></button>

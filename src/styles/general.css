@@ -39,6 +39,7 @@ body {
 
 button {
 	transition: scale 200ms ease-in-out;
+	transform-origin: center;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
@@ -47,11 +48,50 @@ button {
 
 button:hover,
 a:hover {
-	transform: scale(1.1);
+	animation: my_button_pulse_animation;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 }
 
 @media screen and (max-width: 768px) {
 	#root {
 		width: 768px;
+	}
+}
+
+@keyframes my_pulse_animation {
+	0% {
+		scale: 1;
+	}
+	25% {
+		scale: 1.1;
+	}
+	50% {
+		scale: 1;
+	}
+	75% {
+		scale: 1.1;
+	}
+	100% {
+		scale: 1;
+	}
+}
+
+@keyframes my_button_pulse_animation {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		transform: scale(1.05);
+	}
+	50% {
+		transform: scale(1);
+	}
+	75% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
 	}
 }

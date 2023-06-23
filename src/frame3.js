@@ -2,6 +2,7 @@ import { fancyboxVideo } from "./fancybox-utils";
 import { kynangAssets } from "./import_assets";
 import Swiper from "swiper";
 import SwiperAnimation from "@cycjimmy/swiper-animation";
+import { animateCSS } from "./utils";
 
 const books = kynangAssets.books;
 const ingames = kynangAssets.ingames;
@@ -97,16 +98,18 @@ export default function runFrame3() {
 			},
 
 			slideChange: function (swiper) {
-				console.log("activate");
 				swiperAnimation.init(this).animate();
 			},
 
 			activeIndexChange: function (swiper) {
+				animateCSS(book, "animate__fadeOut").then(() => {
+					book.src = info[index].book;
+					animateCSS(book, "animate__fadeIn");
+				});
 				const index = swiper.activeIndex;
 				skillIcon.src = info[index].icon;
 				skillName.innerText = info[index].skillName;
 				skillDescription.innerText = info[index].description;
-				book.src = info[index].book;
 			},
 		},
 	});
